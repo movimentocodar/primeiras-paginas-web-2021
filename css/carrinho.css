@@ -4,7 +4,7 @@
     border-top-right-radius: 5px;
     float:left;
     margin-bottom: 3em;
-    width: 30%;
+    width: 35%;
 }
 
 .carrinho--titulo{
@@ -35,7 +35,13 @@
     font-weight: bold;
 }
 .produto-selecionado--quantidade{
-    padding-top: 0.2em; 
+    padding-top: 0.2em;
+}
+
+.produto-selecionado--deletar{
+    float: right;
+    padding: 0.5em;
+    width: 1.2em;   
 }
 
 .carrinho--valor-total{
