@@ -37,6 +37,7 @@
             <section class="carrinho">
                 <h3 class="carrinho--titulo">Carrinho</h3>
                 <ul class="carrinho--produtos-selecionados">
+                    <!--
                     <li class="produto-selecionado">
                         <img src="imagens/produto-batom-liquido-vizzela.jpg" class="produto-selecionado--imagem">
                         <img src="imagens/close.png" class="produto-selecionado--deletar">
@@ -54,10 +55,10 @@
                         <img src="imagens/close.png" class="produto-selecionado--deletar">
                         <h4 class="produto-selecionado--titulo">delineador – cat lovers vizzela</h4>
                         <p class="produto-selecionado--quantidade">Quantidade: 1</p>
-                    </li>               
+                    </li>    -->           
                 </ul>
-                <p class="carrinho--valor-total">Valor Total: <span>332,99</span></p>
-                <p class="carrinho--quantidade-total">Quantidade Total: <span>2</span></p>
+                <p class="carrinho--valor-total">Valor Total: <span data-valor-total>0.00</span></p>
+                <p class="carrinho--quantidade-total">Quantidade Total: <span data-qtd-total>0</span></p>
                 <input type="submit" value="Finalizar" class="carrinho--finalizar"></input>
             </section>
         </div>
@@ -67,5 +68,6 @@
         <p class="rodape--texto">2021 &copy; Todos os direitos reservados. Developed by Fernanda Beato.</p>
     </footer>
     <script type="module" src="js/produtos.js"></script>
+    <script type="module" src="js/carrinho.js"></script>
 </body>
 </html>

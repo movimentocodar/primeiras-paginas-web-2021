@@ -13,27 +13,26 @@ const produtos = [primer, cleansing, bbCream, baseLiquida, delineadorColorido, d
 
 const listaProdutos = document.querySelector('[data-lista-produtos]');
 
-for(let i = 0; i < produtos.length; i++){
+for(var el of produtos){
     const linhaProduto = document.createElement('li');
     linhaProduto.classList.add('lista--produto');
 
     const produtoImagem = document.createElement('img');
     produtoImagem.classList.add('lista--produto--imagem');
-    produtoImagem.setAttribute('src', produtos[i].imagem);
+    produtoImagem.setAttribute('src', el.imagem);
 
     const produtoNome = document.createElement('h3');
     produtoNome.classList.add('lista--produto--nome');
-    produtoNome.textContent = produtos[i].nome;
+    produtoNome.textContent = el.nome;
 
     const produtoPreco = document.createElement('p');
     produtoPreco.classList.add('lista--produto--valor');
-    let valor = produtos[i].preco;
+    let valor = el.preco;
     produtoPreco.textContent = valor.toFixed(2);
 
     const produtoQuantidade = document.createElement('input');
     produtoQuantidade.classList.add('lista--produto--quantidade');
     produtoQuantidade.setAttribute('type', 'number');
-    produtoQuantidade.setAttribute('value', 0);
     produtoQuantidade.setAttribute('min', 0);
 
     const produtoBtnComprar = document.createElement('input');
