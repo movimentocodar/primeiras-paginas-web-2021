@@ -3,9 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <title>iBuy</title>
 </head>
 <body>
+    <header>
+        <div class="container-header">
+            <h1 class="logo">iBuy</h1>
+            <a href="" class="admin">
+                <div class="img-admin">iBuy</div>
+                admin
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <nav>
+            <div>
+                <div class="title-destaque">Destaques</div>
+                <label for="fname">Busque por um produto:</label>
+                <div class="search-input"><input type="text" placeholder="ex: Coca-Cola" id="fname" name="fname"></div>
+            </div>
+        </nav>
+        <aside>
+            <div class="carrinho">
+                <div class="title-carrinho">Carrinho</div>
+
+                <div class="carrinho-item">
+                    <img src="imagens/placeholder.jpg">
+                    <div>
+                        <span>Coca-Cola</span><br>
+                        <span>quantidade: 1</span>
+                    </div>
+                    <button class="delete">X</button>
+                </div>
+
+                <div class="carrinho-item">
+                    <img src="imagens/placeholder.jpg">
+                    <div>
+                        <span>Vinho</span><br>
+                        <span>quantidade: 4</span>
+                    </div>
+                    <button class="delete">X</button>
+                </div>
+
+                <div class="carrinho-item">
+                    <img src="imagens/placeholder.jpg">
+                    <div>
+                        <span>Salgadinho</span><br>
+                        <span>quantidade: 2</span>
+                    </div>
+                    <button class="delete">X</button>
+                </div>
+
+                <div class="valor-quantidade">
+                    <span><strong>Valor total:</strong> R$ 0,00</span><br>
+                    <span><strong>Quantidade total:</strong> 0</span>
+                </div>
+                <button>Finalizar</button>
+            </div>
+        </aside>
+        <section>
+            <div class="shopitens">
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">Arroz</span><br>
+                    <span class="item-preco">R$ 10,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">Coca-Cola</span><br>
+                    <span class="item-preco">R$ 22,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">Vinho</span><br>
+                    <span class="item-preco">R$ 9,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">M&M</span><br>
+                    <span class="item-preco">R$ 7,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">Rosquinha-Coco</span><br>
+                    <span class="item-preco">R$ 14,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">Salgadinho</span><br>
+                    <span class="item-preco">R$ 13,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">Combo-Frutas</span><br>
+                    <span class="item-preco">R$ 32,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                <div class="item">
+                    <img src="imagens/placeholder.jpg">
+                    <span class="item-name">Bife</span><br>
+                    <span class="item-preco">R$ 10,00</span><br>
+                    <input class="item-input" type="number" value="1" min="1" max="99">
+                    <button class="button-item">Comprar</button>
+                </div>
+                
+            </div>
+        </section>
     
+    </div>
+    
+    <footer>
+        <div class="footer-div">By Bluesoft - &#169; Todos os direitos reservados</div>
+    </footer>
 </body>
+<script type="text/javascript" src="/js/main.js"></script>
 </html>
