@@ -3,9 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vizzela Cosméticos</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/carrinho.css">
 </head>
 <body>
-    
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo">
+            <h1><img src="imagens/logo.png" class="cabecalho--logo"></h1>
+            <nav class="cabecalho--menu">
+                <ul>
+                    <li><img src="imagens/perfil.png" class="cabecalho--menu--img-perfil"></li>
+                    <li><p class="cabecalho--menu--nome-perfil">Admin</p></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="destaques-texto">Destaques</h2>
+        <input type="text" placeholder="Buscar produto..." class="buscar-produto">
+
+        <div class="produtos-e-carrinho">
+            <section class="produtos">
+                <ul class="lista">
+                    <li class="lista--produto">
+                        <img src="imagens/produto-primer-anti-poluicao.jpg" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">primer anti poluição vizzela</h3>
+                        <p class="lista--produto--valor">49,90</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                    <li class="lista--produto">
+                        <img src="imagens/produto-cleansing-oil.jpg" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">cleansing oil vizzela</h3>
+                        <p class="lista--produto--valor">49,90</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                    <li class="lista--produto">
+                        <img src="imagens/produto-bb-cream-vizzela.png" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">bb cream fps 30 vizzela</h3>
+                        <p class="lista--produto--valor">59,90</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                    <li class="lista--produto">
+                        <img src="imagens/produto-base-liquida-vizzela.png" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">base líquida 01 vizzela</h3>
+                        <p class="lista--produto--valor">41,90</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                    <li class="lista--produto">
+                        <img src="imagens/produto-delineador-colorido.png" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">delineador colorido vizzela</h3>
+                        <p class="lista--produto--valor">39,90</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                    <li class="lista--produto">
+                        <img src="imagens/produto-delineador-marromcat.jpg" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">delineador – cat lovers vizzela</h3>
+                        <p class="lista--produto--valor">39,90</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                    <li class="lista--produto">
+                        <img src="imagens/produto-balm-labial-xoxo.jpg" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">balm labial xoxo fps 20 vizzela</h3>
+                        <p class="lista--produto--valor">19,90</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                    <li class="lista--produto">
+                        <img src="imagens/produto-batom-liquido-vizzela.jpg" class="lista--produto--imagem">
+                        <h3 class="lista--produto--nome">batom líquido vizzela</h3>
+                        <p class="lista--produto--valor">28,50</p>
+                        <input type="number" min="0" value="0" class="lista--produto--quantidade">
+                        <input type="submit" value="Comprar" class="lista--produto--comprar"></input>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="carrinho">
+                <h3 class="carrinho--titulo">Carrinho</h3>
+                <ul class="carrinho--produtos-selecionados">
+                    <li class="produto-selecionado">
+                        <img src="imagens/produto-batom-liquido-vizzela.jpg" class="produto-selecionado--imagem">
+                        <h4 class="produto-selecionado--titulo">batom líquido vizzela</h4>
+                        <p class="produto-selecionado--quantidade">Quantidade: 3</p>
+                        <img class="produto-selecionado--deletar">
+                    </li>
+                    <li class="produto-selecionado">
+                        <img src="imagens/produto-balm-labial-xoxo.jpg" class="produto-selecionado--imagem">
+                        <h4 class="produto-selecionado--titulo">balm labial xoxo fps 20 vizzela</h4>
+                        <p class="produto-selecionado--quantidade">Quantidade: 2</p>
+                        <img class="produto-selecionado--deletar">
+                    </li>  
+                    <li class="produto-selecionado">
+                        <img src="imagens/produto-delineador-marromcat.jpg" class="produto-selecionado--imagem">
+                        <h4 class="produto-selecionado--titulo">delineador – cat lovers vizzela</h4>
+                        <p class="produto-selecionado--quantidade">Quantidade: 1</p>
+                        <img class="produto-selecionado--deletar">
+                    </li>               
+                </ul>
+                <p class="carrinho--valor-total">Valor Total: <span>332,99</span></p>
+                <p class="carrinho--quantidade-total">Quantidade Total: <span>2</span></p>
+                <input type="submit" value="Finalizar" class="carrinho--finalizar"></input>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape--texto">2021 &copy; Todos os direitos reservados. Developed by Fernanda Beato.</p>
+    </footer>
+    <script></script>
 </body>
 </html>
