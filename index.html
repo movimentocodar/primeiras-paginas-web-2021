@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <title>GreenSells</title>
+    </head>
+    <body>
+        <header>
+            <div class="cabecalho">
+                <h1>GreenMark</h1>
+                <img src="assets/icones/herbal-spa-treatment-leaves.png">
+                <div id="info-conta">
+                    <img src="assets/icones/user.png">
+                    <a href="https://github.com/movimentocodar/primeiras-paginas-web-2021">Admin</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="display-produtos">
+                <div class="pesquisa-produtos">
+                    <h2>Pesquisar Produto:</h2>
+                    <form action="">
+                        <input type="text" data-form-produto class="insere-produto">
+                        <button id="pesquisar" data-form-pesquisa><img src="assets/icones/search.png"></button>
+                    </form>
+                </div>
+                <h2 class="texto-acima-produtos" data-texto-produtos></h2>
+                <div class="exibe-produtos">
+                    <div>
+                        <img src="" alt="Imagem do produto">
+                        <h3>Nome do produto</h3>
+                        <h2>R$:xx,xx</h2>
+                        <label for="quantidade-prod">Quantidade:</label>
+                        <input type="number" data-quantidade-prod id="quantidade-prod">
+                        <button id="comprar" data-comprar-prod>Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carrinho">
+                <div class="carrinho-header">
+                    <img src="assets/icones/shopping-cart.png">
+                    <h2>Meu Carrinho</h2>
+                </div>
+                <ul class="lista-carrinho" data-lista-carrinho>
+                    <li>
+                        <img>
+                        <h4>Nome produto</h4>
+                        <h3>2x R$:29,90</h3>
+                        <button id="remover" data-remover-carrinho><img src="assets/icones/trash.png"></button>
+                    </li>
+                </ul>
+                <h2>Total: R$:29,00</h2>
+                <button id="finalizar" data-form-finalizar>Finalizar Compra</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; Copyright GreenMark, Todos os direitos reservados</p>
+        </footer>
+    </body>
 </html>
