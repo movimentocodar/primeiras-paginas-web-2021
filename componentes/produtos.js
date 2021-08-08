@@ -1,9 +1,4 @@
-const listaProdutos = `[{"img":"assets/imagens/alface.png","nome":"Alface", "preco":2.99},
-{"img":"assets/imagens/rucula.png","nome":"Rucula", "preco":2.99},
-{"img":"assets/imagens/espinafre.png","nome":"Espinafre", "preco":2.99},
-{"img":"assets/imagens/cenoura.png","nome":"Cenoura", "preco":2.99}]`
-
-
+import listaProdutos from "./listaProdutos.js"
 
 const produtos = JSON.parse(listaProdutos)
 
@@ -17,13 +12,13 @@ const carregaProdutos = (evento)=>{
         const conteudo = `
             <img src="${element.img}" alt="Imagem do produto">
             <h3>${element.nome}</h3>
-            <h2>R$:${element.preco}</h2>
+            <h2>R$: ${element.preco}</h2>
             <div>
-            <label for="quantidade-prod">Quantidade:</label>
-            <form>
-                <input type="number" data-quantidade-prod>
-                <button type="button" data-comprar-prod >Comprar</button>
-            </form>
+                <label for="quantidade-prod">Quantidade:</label>
+                <form>
+                    <input type="number" data-quantidade-prod value="0">
+                    <button type="button" data-comprar-prod>Comprar</button>
+                </form>
             </div>
         `
         tempProduto.innerHTML = conteudo
@@ -34,4 +29,4 @@ const carregaProdutos = (evento)=>{
     });
 }
 
-export default carregaProdutos
+export default carregaProdutos 

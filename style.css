@@ -236,7 +236,7 @@ main{
 }
 
 .lista-carrinho img{
-    height: 50px;
+    width: 30px;
 }
 
 .lista-carrinho h4{
@@ -266,12 +266,17 @@ main{
 }
 
 #total{
-    border-top: solid var(--cor-principal);
-    margin: 1em 0;
-    padding-top: 0.4em;
     font-size: 1.5em;
     font-weight: bold;
     color: var(--cor-principal);
+    margin-bottom: 0.5em;
+}
+
+#qtda-total{
+    color: var(--cor-texto);
+    border-top: solid var(--cor-principal);
+    margin: 1em 0em 0.5em 0;
+    padding-top: 0.4em;
 }
 
 #finalizar{
