@@ -10,13 +10,11 @@ header{
 }
 
 .container-header{
-    /* border: 1px solid darkcyan; */
     width: 836px;
     height: 100%;
     margin: auto;
     display: flex;
     align-items: center;
-    
 }
 
 .item-value{
@@ -31,8 +29,6 @@ nav{
 section{
     display: inline-block;
     width: 545px;
-    
-    
 }
 
 aside{
@@ -60,12 +56,10 @@ aside{
 
 .carrinho-item{
     height: 40px;
-    /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     margin: 15px 0 15px 0;
     border-bottom: #CFCFCF;
-
 }
 
 .carrinho{
@@ -138,10 +132,7 @@ div.carrinho-item img{
     margin-top: 10px;
 }
 
-
-
 .logo{
-    /* border: 1px solid blue; */
     font-size: 36px;
     font-weight: bold;
     
@@ -150,7 +141,6 @@ div.carrinho-item img{
 a.admin{
     margin-left: auto;
     text-decoration: none;
-
 }
 
 .container{
@@ -168,7 +158,6 @@ a.admin{
 .item{
     border: 1px solid #CFCFCF;
     width: 120px;
-
     text-align: center;
     margin: 0 10px 15px 0;
 }
@@ -176,13 +165,11 @@ a.admin{
 .item img {
     width: 100px;
     margin-bottom: 10px;
-    /* border-bottom: 1px solid #CFCFCF; */
 }
 
 .item-input{
     width: 40px;
 }
-
 
 .button-item{
     margin-bottom: 10px;
