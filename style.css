@@ -131,12 +131,15 @@ main{
     border-radius: var(--tamanho-borda);
     box-shadow: 7px 7px 6px #0000004b;
     width: 12em;
+    height: 21em;
     padding: 1em;
     margin: 1em;
+    position: relative;
 }
 
 .prod-card img{
     width:10rem;
+    height: 9rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -160,7 +163,7 @@ main{
 }
 
 .prod-card input{
-    width: 100%;
+    width: 9em;
     box-sizing: border-box;
     height: 2em;
     text-align: center;
@@ -171,7 +174,7 @@ main{
 }
 
 .prod-card button{
-    width: 100%;
+    width: 9em;
     box-sizing: border-box;
     height: 2em;
     text-align: center;
@@ -183,8 +186,16 @@ main{
     border-radius: var(--tamanho-borda);
 }
 
+.prod-card div{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    margin-bottom: 1em;
+}
+
 .prod-card button:hover{
     background-color: #40815d;
+    cursor: pointer;
 }
 
 .carrinho{
@@ -274,6 +285,11 @@ main{
     background-color: var(--cor-secundaria);
     border: none;
     border-radius: var(--tamanho-borda);
+}
+
+#finalizar:hover{
+    cursor: pointer;
+    background-color: #844485;
 }
 
 footer p{

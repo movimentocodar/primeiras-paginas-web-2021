@@ -1,0 +1,7 @@
+{
+    "produto":[{"img":"assets/imagens","nome":"Alface", "preco":2.99},
+        {"img":"assets/imagens","nome":"Alface", "preco":2.99},
+        {"img":"assets/imagens","nome":"Alface", "preco":2.99},
+        {"img":"assets/imagens","nome":"Alface", "preco":2.99}
+    ]
+}
