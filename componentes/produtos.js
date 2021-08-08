@@ -1,14 +1,15 @@
 import listaProdutos from "./listaProdutos.js"
+import addCarrinho from "../main.js"
 
 const produtos = JSON.parse(listaProdutos)
 
 const carregaProdutos = (evento)=>{
     const divProdutos = document.querySelector('[data-lista-produtos]')
+    divProdutos.innerHTML = ''
     produtos.forEach(element => {
         const tempProduto = document.createElement('div')
         tempProduto.classList.add('prod-card')
         
-
         const conteudo = `
             <img src="${element.img}" alt="Imagem do produto">
             <h3>${element.nome}</h3>
@@ -25,6 +26,21 @@ const carregaProdutos = (evento)=>{
 
         divProdutos.appendChild(tempProduto)
 
+        const itens = document.querySelectorAll('[data-comprar-prod]');
+
+        itens.forEach(element => {
+            element.addEventListener('click', (event)=>addCarrinho(event,element))
+        });
+
+        const inputs = document.querySelectorAll('[data-quantidade-prod]')
+
+        inputs.forEach(element => {
+            element.addEventListener('keydown',(event)=>{
+                if(event.keyCode == 13){
+                    event.preventDefault()
+                }
+            })
+        })
 
     });
 }

@@ -67,7 +67,7 @@ main{
 
 .produtos{
     width: 80%;
-    background: rgba(255, 255, 255, 0.555);
+    background: rgba(255, 255, 255, 0.363);
     padding: 2em;
     border-radius: var(--tamanho-borda);
 }
@@ -88,14 +88,14 @@ main{
 
 .pesquisa-produtos form{
     display: flex;
-    border: 2px solid rgb(189, 189, 189);
     border-radius: var(--tamanho-borda);
 }
 
 .pesquisa-produtos input{
-    border: none;
-    border-radius: var(--tamanho-borda) 0px 0px var(--tamanho-borda);
+    border: 0;
+    border-radius: var(--tamanho-borda);
     width: 25em;
+    border: solid var(--cor-secundaria);
 }
 
 .pesquisa-produtos button{
@@ -105,6 +105,8 @@ main{
 
 #insere-produto{
     height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
 }
 
 .lupa{

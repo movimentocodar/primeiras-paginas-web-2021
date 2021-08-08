@@ -1,5 +1,6 @@
 import carregaProdutos from "./componentes/produtos.js"
 import { adicionar } from "./componentes/carrinho.js"
+import exibeProdutoPesquisado from "./componentes/barraPesquisa.js"
 
 function addCarrinho(event, elemento){
     event.preventDefault()
@@ -15,19 +16,17 @@ function addCarrinho(event, elemento){
 
 carregaProdutos()
 
-const itens = document.querySelectorAll('[data-comprar-prod]');
+const barra = document.querySelector('[data-form-produto]')
 
-itens.forEach(element => {
-    element.addEventListener('click', (event)=>addCarrinho(event,element))
+barra.addEventListener('input', function (evt) {
+    let pesquisa = this.value
+    exibeProdutoPesquisado(pesquisa)
 });
 
-const inputs = document.querySelectorAll('[data-quantidade-prod]')
-
-inputs.forEach(element => {
-    element.addEventListener('keydown',(event)=>{
-        if(event.keyCode == 13){
-            event.preventDefault()
-        }
-    })
+barra.addEventListener('keydown',(event)=>{
+    if(event.keyCode == 13){
+        event.preventDefault()
+    }
 })
 
+export default addCarrinho
