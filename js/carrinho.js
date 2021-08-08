@@ -10,6 +10,7 @@ for(var el of comprar){
             alert('Selecione uma quantidade para este produto.')
         }else{
             inserirProdutoCarrinho(produtoSelecionado);
+            quantidade = '';
         }        
     });
 }
@@ -19,6 +20,9 @@ function inserirProdutoCarrinho(produto){
     const produtoNome = produto.querySelector('.lista--produto--nome').textContent;
     const produtoPreco = produto.querySelector('.lista--produto--valor').textContent;
     const produtoQtd = produto.querySelector('.lista--produto--quantidade').value;
+
+    const htmlPreco = document.querySelector('[data-valor-total]');
+    const htmlQtd = document.querySelector('[data-qtd-total]');
 
     const lista = document.querySelector('.carrinho--produtos-selecionados');
 
@@ -33,28 +37,39 @@ function inserirProdutoCarrinho(produto){
     btnDeletar.classList.add('produto-selecionado--deletar');
     btnDeletar.src = "imagens/close.png";
 
+    btnDeletar.addEventListener('click', function(){
+        const linha = this.parentNode;
+        valorTotal -= parseFloat(produtoPreco) * parseFloat(produtoQtd);
+        qtdTotal -= parseInt(produtoQtd);
+
+        htmlPreco.innerHTML = valorTotal.toFixed(2);
+        htmlQtd.innerHTML = qtdTotal;
+
+        linha.remove();
+    });
+
     const produtoNomeCarrinho = document.createElement('h4');
     produtoNomeCarrinho.classList.add('produto-selecionado--titulo');
     produtoNomeCarrinho.textContent = produtoNome;
 
     const produtoQtdCarrinho = document.createElement('p');
     produtoQtdCarrinho.classList.add('produto-selecionado--quantidade');
-    produtoQtdCarrinho.textContent = `Quantidade: ${produtoQtd}`;
+    produtoQtdCarrinho.textContent = `Quantidade: ${produtoQtd}`;    
 
-    valorTotal += parseFloat(produtoPreco) * parseFloat(produtoQtd);
-    qtdTotal += parseInt(produtoQtd);
+    calcularCarrinho(produtoPreco, produtoQtd);    
 
-    const htmlPreco = document.querySelector('[data-valor-total]');
-    const htmlQtd = document.querySelector('[data-qtd-total]');
-
-    htmlPreco.innerHTML = valorTotal;
+    htmlPreco.innerHTML = valorTotal.toFixed(2);
     htmlQtd.innerHTML = qtdTotal;
 
     novaLinha.appendChild(produtoImagemCarrinho);
     novaLinha.appendChild(btnDeletar);
     novaLinha.appendChild(produtoNomeCarrinho);
     novaLinha.appendChild(produtoQtdCarrinho);
-    lista.appendChild(novaLinha);
+    lista.appendChild(novaLinha);    
 }
 
 
+function calcularCarrinho(produtoPreco, produtoQtd){
+    valorTotal += parseFloat(produtoPreco) * parseFloat(produtoQtd);
+    qtdTotal += parseInt(produtoQtd);
+}
