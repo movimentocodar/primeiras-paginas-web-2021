@@ -5,12 +5,12 @@ let qtdTotal = 0;
 for(var el of comprar){
     el.addEventListener('click', function(){
         const produtoSelecionado = this.parentNode;
-        const quantidade = produtoSelecionado.querySelector('.lista--produto--quantidade').value;
-        if(quantidade <= 0){
+        const quantidade = produtoSelecionado.querySelector('.lista--produto--quantidade');
+        if(quantidade.value <= 0){
             alert('Selecione uma quantidade para este produto.')
         }else{
             inserirProdutoCarrinho(produtoSelecionado);
-            quantidade = '';
+            quantidade.value = 0;
         }        
     });
 }
@@ -20,6 +20,9 @@ function inserirProdutoCarrinho(produto){
     const produtoNome = produto.querySelector('.lista--produto--nome').textContent;
     const produtoPreco = produto.querySelector('.lista--produto--valor').textContent;
     const produtoQtd = produto.querySelector('.lista--produto--quantidade').value;
+
+    const nenhumProduto = document.querySelector('.nenhum-produto');
+    nenhumProduto.style.display = 'none';
 
     const htmlPreco = document.querySelector('[data-valor-total]');
     const htmlQtd = document.querySelector('[data-qtd-total]');
@@ -37,10 +40,10 @@ function inserirProdutoCarrinho(produto){
     btnDeletar.classList.add('produto-selecionado--deletar');
     btnDeletar.src = "imagens/close.png";
 
-    btnDeletar.addEventListener('click', function(){
-        const linha = this.parentNode;
-        valorTotal -= parseFloat(produtoPreco) * parseFloat(produtoQtd);
-        qtdTotal -= parseInt(produtoQtd);
+    btnDeletar.addEventListener('click', () => {
+        const linha = btnDeletar.parentNode;
+        
+        atualizarCarrinho(produtoPreco, produtoQtd);
 
         htmlPreco.innerHTML = valorTotal.toFixed(2);
         htmlQtd.innerHTML = qtdTotal;
@@ -72,4 +75,9 @@ function inserirProdutoCarrinho(produto){
 function calcularCarrinho(produtoPreco, produtoQtd){
     valorTotal += parseFloat(produtoPreco) * parseFloat(produtoQtd);
     qtdTotal += parseInt(produtoQtd);
+}
+
+const atualizarCarrinho = (produtoPreco, produtoQtd) => {
+    valorTotal -= parseFloat(produtoPreco) * parseFloat(produtoQtd);
+    qtdTotal -= parseInt(produtoQtd);
 }

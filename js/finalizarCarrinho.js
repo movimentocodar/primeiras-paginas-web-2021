@@ -9,4 +9,10 @@ botaoFinalizar.addEventListener('click', function(){
         valorTotal.innerHTML = 0.00.toFixed(2);
         qtdTotal.innerHTML = 0;
     }
+
+    const quantidadeListaProdutos = document.querySelectorAll('.lista--produto--quantidade');
+    for(let el of quantidadeListaProdutos){
+        el.value = 0;
+    }    
 });
+

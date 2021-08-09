@@ -48,5 +48,3 @@ for(var el of produtos){
 
     listaProdutos.appendChild(linhaProduto);
 }
-
-
