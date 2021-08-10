@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CoffAroma - Produtos</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <div class="banner-top">
+            <section class="banner-logo">
+                <img src="imagens/logocoffaromaoff.png" class="img-logo">
+            </section>
     
+            <section class="banner-menu">
+                <nav>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Produtos</a></li>
+                    <li><a href="">Sobre nós</a></li>
+                    <li><a href="">Contato</a></li>
+                </nav>
+            </section>
+
+            <section class="banner-profile">
+                
+            </section>
+    
+            <section class="banner-profile-cart">
+                <img src="imagens/login.png" class="img-login">
+                <p class="profile-name">Lilian</p>
+                
+                <button class="button-cart" data-button-cart>
+                    <img src="imagens/shopping-cart.png" class="img-cart">
+                    <p class="cart-number">0</p>
+                    <p class="cart-title">Meu carrinho</p>
+                </button>
+            </section>
+        </div>
+    </header>
+
+    <div class="hidecart" data-hidden-cart>
+        <img src="imagens/cart.png" class="img-cart-appen">
+        <div class="cart">
+            <Table>
+                <tr>
+                    <td colspan="2" class="prod-cart-close"><button class="close-prod" data-close-cart><p class="close-cart">X</p></button></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="prod-name-cart">Não há nada no carrinho</td>
+                </tr>
+            </Table>
+        </div>
+    </div>
+
+    <main>
+        <div class="subtitle">
+            <section class="subtitle-section">
+                <p class="page-name">Produtos</p>
+                <fieldset class="searchset">
+                    <input class="search-input" />
+                    <button class="search-button"><img src="imagens/search.png" class="img-search"><p class="search-title">Pesquisar</p></button>
+                </fieldset>
+            </section>
+        </div>
+
+        <div class="page-content">
+            <section class="content-section" data-content-section>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <table class="banner-bottom">
+            <tr>
+                <td class="banner-social">
+                    <div class="div-facebook"><img src="imagens/facebook.png" class="img-face"><a href="" class="social-name">Facebook</a></div>
+                    <div class="div-instagram"><img src="imagens/instagram.png" class="img-insta"><a href="" class="social-name">Instagram</a> </div>
+                    <div class="div-whatsapp"><img src="imagens/whatsapp.png" class="img-whatsapp"><a href="" class="social-name">Whatsapp</a></div>
+                </td>
+                <td class="banner-logo-footer">
+                    <img src="imagens/logocoffaromaoff.png" class="img-logo-footer">
+                </td>
+                <td class="banner-menu-map">
+                    <nav>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Produtos</a></li>
+                        <li><a href="">Sobre nós</a></li>
+                        <li><a href="">Contato</a></li>
+                    </nav>
+                </td>
+            </tr>
+        </table>     
+    
+        <section class="banner-contacts">
+            <p>TELEFONE: (11) 9999-9999  &#9679;  WHATSAPP: (11) 99906-9999  &#9679;  E-MAIL DE CONTATO: contato@coffaroma.com.br</p>
+        </section>
+    
+        <section class="banner-copyrights">
+            &copy; Copyright CoffAroma
+        </section>
+    </footer>
+    <script type="module" src="main.js"></script>
 </body>
 </html>

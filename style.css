@@ -1,0 +1,464 @@
+body, .search-input, .search-title, .addcart-button, .viewcart-button, .input-prod-qty, .button-cart{
+	font-family: 'Merriweather', sans-serif;
+	font-size:16px;
+}
+
+.close-cart{
+	font-family: 'Merriweather', sans-serif;
+	font-size:14px;
+	font-weight:bold;
+}
+
+/*Header*/
+
+header {
+	background: #090401;
+    background-image: url(imagens/graosdefundo.png);
+    background-repeat: repeat-x;
+	background-size: 940px 23px;
+    color: #F3ECD9;
+}
+
+.banner-top {
+	width: 940px;
+	height:135px;
+	margin: 0 auto;
+	padding: 53px 47px 67px 67px;
+}
+
+/*Logo*/
+
+.banner-logo{
+	position: relative;
+	left: 0px;
+	top:40px;
+	width: 91px;
+	height: 95px;
+}
+
+.img-logo {
+	width: 91px;
+	height: 95px;
+}
+
+/*Menu*/
+
+.banner-menu{
+	position: relative;
+	top:-15px;
+	left: 138px;
+	width:320px;
+}
+
+nav li {
+	display: inline;
+	letter-spacing: 0.3px;
+	padding:0 5px;
+}
+
+nav li a, .social-name{
+    color: #F3ECD9;
+	text-decoration:none;
+}
+
+nav li a:hover, .social-name:hover{
+	text-decoration:underline;
+}
+
+/*Profile e Carrinho*/
+
+.banner-profile-cart{
+	float:right;
+	position:relative;
+	top:-37px;
+
+	width:auto;
+	height:29px;
+}
+
+.cart-number{
+	display:inline;
+	position:relative;
+	top:-9px;
+	left:-4px;
+	font-weight:bold;
+}
+
+.cart-title{
+	display:inline;
+	position:relative;
+	top:-9px;
+}
+
+.profile-name{
+	position:relative;
+	top:-9px;
+	display:inline;
+	padding:0 10px 0 5px;
+}
+
+.img-cart{
+	display:inline;
+	width:29.85px;
+	height:29px;
+}
+
+.img-login{
+	width:28px;
+	height:29px;
+}
+
+.button-cart{
+	border:0px;
+	background-color: #090401;
+    color: #F3ECD9;
+}
+
+/*Subtitulo*/
+
+.subtitle{
+	background: #100703;
+}
+
+.subtitle-section{
+	width: 940px;
+	height:37px;
+	margin: 0 auto;
+	padding: 34px 63px;
+}
+
+.page-name{
+	font-family: 'Bebas Neue', sans-serif;
+	font-size:48px;
+	color: #F3ECD9;
+	display:inline;
+}
+
+.searchset{
+	display:inline;
+	padding: 0 0 0 60px;
+}
+
+.search-input{
+	background-color:#F3ECD9;
+	width:252px;
+	height:31px;
+	font-size:14px;
+	color:black;
+	border:0px;	
+	padding:2px 5px;
+}
+
+.search-button{
+	position:relative;
+	top:2px;
+	background-color: #100703;
+	border:0px;
+	height:31px;
+	width:auto;
+}
+
+.search-button:hover, .button-cart:hover, .close-cart:hover, .addcart-button:hover, .viewcart-button:hover, .add-prod-qty:hover, .del-prod:hover, .del-prod-cart:hover{
+	cursor:pointer;
+}
+
+.search-title{
+    color: #F3ECD9;
+	display:inline;
+	position:relative;
+	top:-3px;
+}
+
+.img-search{
+	display:inline;
+	width:20px;
+	height:20px;
+	padding:0 7px 0 0;
+}
+
+/*Listagem do carrinho*/
+
+.hidecart{
+	display:none;
+	position:absolute;
+	top: 152px;
+	left:990px;
+}
+
+.img-cart-appen{
+	position:relative;
+	left:20px;
+	width:49px;
+	height:29px;
+}
+
+
+.cart{
+	position:relative;
+	top:-5px;
+	width:220px;
+	height:auto;
+	padding:35px 22px;
+	background-color:white;
+
+}
+
+.prod-descr-cart{
+	padding: 0 30px;
+}
+
+.del-prod-cart{
+	vertical-align:bottom;
+	margin:0px 0px 0px 20px;
+}
+
+.prod-price-cart{
+	display:inline;
+}
+
+.prod-cart{
+	padding:10px;
+}
+
+.close-prod{
+	float:right;
+	position:relative;
+	top:-20px;
+	right:-10px;
+}
+
+.img-prod-cart{
+	width:68px;
+	height:71px;
+}
+
+.cart-line{
+	width: 160px;
+	border-bottom:1px solid #946737;
+	margin:20px auto 30px auto;
+}
+
+.input-prod-qty, .input-prod-qty-cart{
+	width:50px;
+	height:35px;
+	background-color:white;
+	border: 1px solid #C49664;
+	font-weight:bold;
+	padding:2px 5px;
+	text-align:center;
+	vertical-align: top;
+	margin:0px 5px 0px 0px;
+}
+
+.prod-price-cart{
+	display:inline;
+}
+
+.prod-cart-img{
+	width:80px;
+}
+
+.prod-name-cart, .prod-itens{
+	padding:0 0 10px 0;
+	font-size:14px;
+	text-align:center;
+	font-weight:bold;
+}
+
+.viewcart-button{
+	margin: 0px 0px 0px 12px;
+}
+
+.prod-itens{
+	text-align:right;
+}
+
+.prod-cart-add{
+	width:120px;
+}
+
+.prod-qty{
+	font-size:22px;
+	display:inline;
+}
+
+/*Conteúdo da página*/
+
+.page-content{
+	background: #EDE8DB;
+}
+
+.content-section{
+	width: 940px;
+	height: auto;
+	margin: 0 auto;
+	padding: 70px 0;
+}
+
+/*Produto*/
+
+.table-prod{
+	background-color:#FBF8EF;
+	width:195px;
+	height:293px;
+	border-bottom: 8px solid #C49664;
+	padding:20px 30px;
+}
+
+.table-prod-space{
+	width:60px;
+	height:40px;
+}
+
+.table-prod-space2{
+	width:20px;
+}
+
+.prod-descr, .prod-name{
+	font-size:14px;
+	text-align:center;
+	padding: 5px 0px;
+}
+
+.prod-name{
+	font-weight:bold;
+}
+
+.prod-price, .prod-price-cart{
+	font-family: 'Bebas Neue', sans-serif;
+	font-size:22px;
+	text-align:center;
+	padding: 5px 0px;
+}
+
+.addcart-button, .viewcart-button{
+	width:198px;
+	height:40px;
+	background-color:#C49664;
+	color:black;
+	text-align:Center;
+	border:0px;
+	padding: 5px 0px;
+}
+
+.input-prod-qty{
+	margin:0 5px 0 10px;
+}
+
+.add-prod-qty, .del-prod, .del-prod-cart, .close-prod{
+	font-family: 'Bebas Neue', sans-serif;
+	font-size:48px;
+	color:black;
+	width:48px;
+	height:40px;
+	background-color:#C49664;
+	border:0px;
+}
+
+.add-prod-qty, .del-prod{
+	margin:0 5px 0 0;
+}
+
+.add-plus{
+	position:relative;
+	top:-10px;
+}
+
+.img-del{
+	position:relative;
+	top:-15px;
+	width:22px;
+	height:24.16px;
+}
+
+
+.table-prod:hover{
+	background-color:#FFFFFF;
+	transition: 0.5s;
+}
+
+.addcart-button:hover, .add-prod-qty:hover, .close-prod:hover, .del-prod:hover, .del-prod-cart:hover, .viewcart-button:hover{
+	background-color:#946737;
+	transition: 0.5s;
+}
+
+.img-prod{
+	padding:20px 35px;
+	width:128px;
+	height:143px;
+}
+
+
+/*Footer*/
+
+footer {
+	background: #090401;
+    color: #F3ECD9;
+}
+
+.banner-bottom{
+	width: 585px;
+	height:135px;
+	margin: 0 auto;
+}
+
+/*Redes sociais, logo e mapa do website*/
+
+.banner-social, .banner-menu-map{
+	vertical-align:Top;
+	padding:50px 0;
+}
+
+.social-name{
+	position:relative;
+	top:-5px;
+	left:20px;
+	display:inline;
+}
+
+.div-facebook, .div-instagram, .div-whatsapp{
+	display:block;
+	width:135px;
+	padding:10px 0px;
+}
+
+.img-face, .img-insta, .img-whatsapp{
+	width:25px;
+	height:25px;
+}
+
+.img-logo-footer {
+	position: relative;
+	top:55px;
+	width: 131px;
+	height: 138px;
+}
+
+footer nav li {
+	display: block;
+	padding:10px 0px;
+}
+
+/*Contatos*/
+
+.banner-contacts{
+	background: black;
+	font-family: 'Roboto', sans-serif;
+	padding:15px 0px;
+	text-align:center;
+}
+
+/*Copyrights*/
+
+.banner-copyrights{
+    background-image: url(imagens/graosdefundo.png);
+    background-repeat: repeat-x;
+	background-size: 940px 25px;
+	font-family: 'Roboto', sans-serif;
+	height:18px;
+	text-align:center;
+    color: #F3ECD9;
+	font-size:12px;
+	padding:7px 0px;
+}
+
