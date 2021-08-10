@@ -1,0 +1,190 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,body{
+	height: 100%;
+}
+
+.center{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.clear{
+	clear: both;
+}
+header{
+	padding: 20px;
+	background-color: rgb(245,245,245);
+	font-family: 'Open Sans', sans-serif;
+}
+
+nav ul{
+	float: right;
+}
+
+nav ul li{
+	float: left;
+	margin-right: 20px;
+	margin-top: 30px;
+	list-style: none;
+}
+
+nav ul li:first-child{
+	margin-top: 15px;
+	padding: 15px 10px;
+	border-radius: 30px;
+	color: white;
+	background-color: rgb(60,60,60);
+}
+
+.logo{
+	float: left;
+	font-size: 40px;
+	color: rgb(60,60,60);
+	font-weight: 500;
+}
+
+section.vendas{
+	width: 100%;
+	padding: 0 2%;
+}
+
+.destaques h2{
+	font-size: 20px;
+	margin: 10px 0;
+	color: rgb(60,60,60);
+	font-weight: 300;
+	font-family: 'Lobster', cursive;
+}
+
+.destaques input[type=text]{
+	width: 70%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	outline: 0;
+}
+
+.mercado{
+	width: 70%;
+	background-color: red;
+}
+
+.produtos{
+	float: left;
+	padding: 20px;
+	width: 25%;
+}
+
+.produtos img{
+	width: 210px;
+}
+
+.produtos p{
+	margin-top: 10px;
+	margin-left: 30px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.produtos p:nth-of-type(1){
+	font-family: 'Lobster', cursive;
+	font-weight: 300;
+}
+
+.Valor{
+
+	color: red;
+	font-weight: bold;
+}
+
+.produtos input[type=text]{
+	display: block;
+	width: 50px;
+	padding: 10px;
+	margin: 10px 74px;
+	text-align: center;
+	outline: 0;
+	border: 1px solid rgb(100,100,100);
+	border-radius: 5px;
+}
+
+.btn1{
+	cursor: pointer;
+	width: 100px;
+	padding: 13px 7px;
+	text-align: center;
+	display: block;
+	margin: 10px 55px;
+	border: 0;
+	border-radius: 6px;
+	background-color: #5FE6F4;
+	color: white;
+	font-weight: bold;
+}
+
+.btn1:hover{
+
+	color:#21acc4;
+	text-decoration: underline
+}
+
+.carrinho{
+	position: relative;
+	top: -480px;
+	left: 20px;
+	width: 30%;
+	float: left;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-top: 60px solid rgb(60,60,60);
+	border-radius: 8px;
+	
+}
+
+.carrinho p{
+	color: white;
+	margin-top: -70px;
+	margin-left: 100px;
+	font-size: 35px;
+	font-family: 'Lobster', cursive;
+	font-weight: 300;
+}
+
+.carrinho-wraper h2{
+	font-size: 18px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	margin-left: 100px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.carrinho-wraper p{
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 0;
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.carrinho-wraper .btn1{
+	margin: 10px 0;
+}
+
+
+.copyright {
+	color: white;
+	font-size: 16px;
+	width: 20px 50px;
+	padding:16px 130px;
+	background:#2c2c2c;
+	font-family: 'Lobster', cursive;
+
+}
