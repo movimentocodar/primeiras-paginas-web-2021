@@ -36,7 +36,7 @@
                 
                 <button class="button-cart" data-button-cart>
                     <img src="imagens/shopping-cart.png" class="img-cart">
-                    <p class="cart-number">0</p>
+                    <p class="cart-number" data-cart-number>0</p>
                     <p class="cart-title">Meu carrinho</p>
                 </button>
             </section>
@@ -51,7 +51,26 @@
                     <td colspan="2" class="prod-cart-close"><button class="close-prod" data-close-cart><p class="close-cart">X</p></button></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="prod-name-cart">Não há nada no carrinho</td>
+                    <td colspan="2" class="prod-name-cart" data-cart-content>
+                        Não há nada no carrinho
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="prod-name-cart">
+                        <div class="hidebuttons" data-div-cart-buttons>
+                            <table>
+                                <tr>
+                                    <td colspan="2" class="prod-itens" data-cart-qtd><div class="hidebuttons" data-cart-qtd>+3 itens</div></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="prod-itens">Total: <p class="prod-price-cart" data-total-price>R$ 23,90</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><button class="viewcart-button" data-view-cart>Visualizar carrinho</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
                 </tr>
             </Table>
         </div>

@@ -1,4 +1,4 @@
-body, .search-input, .search-title, .addcart-button, .viewcart-button, .input-prod-qty, .button-cart{
+body, .search-input, .search-title, .addcart-button, .viewcart-button, .input-prod-qty, .input-prod-qty-cart, .button-cart{
 	font-family: 'Merriweather', sans-serif;
 	font-size:16px;
 }
@@ -178,8 +178,11 @@ nav li a:hover, .social-name:hover{
 
 /*Listagem do carrinho*/
 
-.hidecart{
+.hidebuttons, .hidecart{
 	display:none;
+}
+
+.hidecart{
 	position:absolute;
 	top: 152px;
 	left:990px;
@@ -204,16 +207,19 @@ nav li a:hover, .social-name:hover{
 }
 
 .prod-descr-cart{
-	padding: 0 30px;
+	padding: 0 0 0 10px;
 }
 
 .del-prod-cart{
-	vertical-align:bottom;
-	margin:0px 0px 0px 20px;
+	position:relative;
+	top:5px;
+	margin:0px 0px 0px 10px;
 }
 
 .prod-price-cart{
 	display:inline;
+	margin:0 5px;
+	font-size:16px;
 }
 
 .prod-cart{
@@ -274,11 +280,11 @@ nav li a:hover, .social-name:hover{
 }
 
 .prod-cart-add{
-	width:120px;
+	width:140px;
 }
 
 .prod-qty{
-	font-size:22px;
+	font-size:16px;
 	display:inline;
 }
 
@@ -358,19 +364,6 @@ nav li a:hover, .social-name:hover{
 .add-prod-qty, .del-prod{
 	margin:0 5px 0 0;
 }
-
-.add-plus{
-	position:relative;
-	top:-10px;
-}
-
-.img-del{
-	position:relative;
-	top:-15px;
-	width:22px;
-	height:24.16px;
-}
-
 
 .table-prod:hover{
 	background-color:#FFFFFF;
