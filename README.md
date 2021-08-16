@@ -10,6 +10,8 @@ Conteúdo adicional
 
 - https://scrimba.com/learn/design
 - https://www.freecodecamp.org/
+- https://rockcontent.com/br/blog/web-design-responsivo/
+- https://kinsta.com/pt/blog/design-responsivo-web/
 
 # Desafio
 
