@@ -1,22 +1,26 @@
-//Variáveis e constantes
-
-// 0: nome, 1: img, 2: descr, 3: preço
+// 0: nome, 1: img, 2: descr, 3: preço, 4: id
 const arProduct = [
-    ["Dolce Gusto Caffé Matinal","dolcegusto-caffematinal.webp","Intensidade 9",23.9],
-    ["Dolce Gusto Alpino","dolcegusto-alpino.webp","Intensidade 8",23.9],
-    ["Dolce Gusto Caseiro Intenso","dolcegusto-caseirointenso.webp","Intensidade 10",23.9],
-    ["Dolce Gusto Au Lait","dolcegusto-aulait.webp","Café com leite",23.9],
-    ["Dolce Gusto Espresso","dolcegusto-espresso.webp","Intensidade 8",23.9],
-    ["Melitta Sabor da Fazenda","melitta.jpg","Intensidade 7",15.9],
-    ["Innovare Tradicional","innovare.jpg","Intensidade 7",15.9],
-    ["Nespresso Colombia","colombiaespresso.jpg","Intensidade 9",25.9],
-    ["Nespresso Cafézinho","nespresso-cafezinhodobrasil.webp","Intensidade 5",25.9],
-    ["Caneca Sakura Starbucks","caneca01.jpg","Material em cerâmica",55.9],
-    ["Caneca Preta","caneca-preta.webp","Material em cerâmica",33.9]    
+    ["Dolce Gusto Caffé Matinal","dolcegusto-caffematinal.webp","Intensidade 9",23.9,0],
+    ["Dolce Gusto Alpino","dolcegusto-alpino.webp","Intensidade 8",23.9,1],
+    ["Dolce Gusto Caseiro Intenso","dolcegusto-caseirointenso.webp","Intensidade 10",23.9,2],
+    ["Dolce Gusto Au Lait","dolcegusto-aulait.webp","Café com leite",23.9,3],
+    ["Dolce Gusto Espresso","dolcegusto-espresso.webp","Intensidade 8",23.9,4],
+    ["Melitta Sabor da Fazenda","melitta.jpg","Intensidade 7",15.9,5],
+    ["Innovare Tradicional","innovare.jpg","Intensidade 7",15.9,6],
+    ["Nespresso Colombia","colombiaespresso.jpg","Intensidade 9",25.9,7],
+    ["Nespresso Cafézinho","nespresso-cafezinhodobrasil.webp","Intensidade 5",25.9,8],
+    ["Caneca Sakura Starbucks","caneca01.jpg","Material em cerâmica",55.9,9],
+    ["Caneca Preta","caneca-preta.webp","Material em cerâmica",33.9,10],    
     ]  
 
-//Procura e adiciona evento
+    
+window.onload = function onloadGenProd(){ 
+    window.sessionStorage.setItem("Cart", JSON.stringify(""));
+    window.sessionStorage.setItem("Search", JSON.stringify(""));
+    generateProductList();
+}
 
+//Procura e adiciona evento
 function findAndAddEvent(dataName, eventType, functionName){
     const objList = document.querySelectorAll('[' + dataName + ']');
 
@@ -25,8 +29,9 @@ function findAndAddEvent(dataName, eventType, functionName){
     }
 }
 
+//Edita um item existente
 function editProd(newQty, targetID){
-    if(sessionStorage.getItem("Cart")){
+    if(JSON.parse(sessionStorage.getItem("Cart")) !== ""){
         var arCart = JSON.parse(sessionStorage.getItem("Cart"));
 
         for(var i = 0; i < arCart.length; i++){
@@ -52,8 +57,9 @@ function editProd(newQty, targetID){
     }
 }
 
+//Remonta o carrinho
 function buildCart(){
-    if(sessionStorage.getItem("Cart")){
+    if(JSON.parse(sessionStorage.getItem("Cart")) !== ""){
         var arCart = JSON.parse(sessionStorage.getItem("Cart"));
 
         for (var i = 0; i < arCart.length; i++) {
@@ -89,9 +95,10 @@ function buildCart(){
     }
 }
 
+//Deleta um item
 function delProdTrashCan(targetID){
-
-    if(sessionStorage.getItem("Cart")){
+    console.log(targetID);
+    if(JSON.parse(sessionStorage.getItem("Cart")) !== ""){
         var arCart = JSON.parse(sessionStorage.getItem("Cart")),
         deletedIndex = 0;
 
@@ -101,6 +108,7 @@ function delProdTrashCan(targetID){
                 arCart.splice(i, 1);
                 console.log(arCart);
             }
+            
         }
 
         window.sessionStorage.setItem("Cart", JSON.stringify(arCart));
@@ -111,10 +119,8 @@ function delProdTrashCan(targetID){
             var tdProdContent = "";
         
             const objList = document.querySelectorAll('[data-opt-prod]');
-            console.log(objList);
-            console.log(targetID);
             for (const eachObj of objList) {
-                if (eachObj.id == (targetID).toString()){
+                if (eachObj.id === (targetID).toString()){
                     console.log(eachObj.id);
                     tdProdContent = `<button id="${targetID}" class="addcart-button" data-add-cart>Adicionar no carrinho</button>`;
                     eachObj.innerHTML = tdProdContent;
@@ -132,36 +138,49 @@ function delProdTrashCan(targetID){
     }
 }
 
+//Reseta o carrinho
 function resetSessionCart(){
-    if(sessionStorage.getItem("Cart")){
-        var tdProdContent = "";
-        
-        const objList = document.querySelectorAll('[data-opt-prod]');
-        for(var i = 0; i < arProduct.length; i++){
-            tdProdContent = `<button id="${i}" class="addcart-button" data-add-cart>Adicionar no carrinho</button>`;
-            objList[i].innerHTML = tdProdContent;
-        }
-
-        const tdCartContent = document.querySelector('[data-cart-content]');
-        tdCartContent.innerHTML = "Não há nada no carrinho";
-        const divCartButtons = document.querySelector('[data-div-cart-buttons]');
-        divCartButtons.style.display = "none";
-        const pCartNumber = document.querySelector('[data-cart-number]');
-        pCartNumber.innerHTML = "0";
-
-        const divCartQtd = document.querySelector('[data-cart-qtd]');
-        divCartQtd.innerHTML = "";
-        divCartQtd.style.display = "block";
+    var arBuild = [];
     
-        window.sessionStorage.removeItem("Cart");
-        
-        findAndAddEvent("data-add-cart", "click", addCart);
+    if(sessionStorage.getItem("Search")){
+        if (JSON.parse(sessionStorage.getItem("Search")) === ""){
+            arBuild = arProduct;
+        } else {
+            arBuild = JSON.parse(sessionStorage.getItem("Search"));
+        }
+    } else {
+        arBuild = arProduct;
     }
+    
+    const objList = document.querySelectorAll('[data-opt-prod]'),
+    tdCartContent = document.querySelector('[data-cart-content]'),
+    divCartButtons = document.querySelector('[data-div-cart-buttons]'),
+    pCartNumber = document.querySelector('[data-cart-number]'),
+    divCartQtd = document.querySelector('[data-cart-qtd]');
+
+    for(var i = 0; i < arBuild.length; i++){
+        for (const eachObj of objList) {
+            if(eachObj.id === (arBuild[i][4]).toString()){
+                var tdProdContent = `<button id="${arBuild[i][4]}" class="addcart-button" data-add-cart>Adicionar no carrinho</button>`;
+                objList[i].innerHTML = tdProdContent;
+            }
+        }        
+    }
+
+    tdCartContent.innerHTML = "Não há nada no carrinho";
+    divCartButtons.style.display = "none";
+    pCartNumber.innerHTML = "0";
+    divCartQtd.innerHTML = "";
+    divCartQtd.style.display = "block";
+
+    window.sessionStorage.setItem("Cart", JSON.stringify(""));
+    
+    findAndAddEvent("data-add-cart", "click", addCart);
 }
 
+//Atualiza carrinho
 function updateCart(){
-    
-    if(sessionStorage.getItem("Cart")){
+    if(JSON.parse(sessionStorage.getItem("Cart")) !== ""){
         var arCart = JSON.parse(sessionStorage.getItem("Cart")),
         totalPr = 0,
         totalItem = 0,
@@ -169,7 +188,10 @@ function updateCart(){
 
         const objList = document.querySelectorAll('[data-input-prod]'), 
         objList2 = document.querySelectorAll('[data-cart-qty]'),
-        objList3 = document.querySelectorAll('[data-cart-price]');
+        objList3 = document.querySelectorAll('[data-cart-price]'),
+        pCartNumber = document.querySelector('[data-cart-number]'),
+        pTotalPrice = document.querySelector('[data-total-price]'),
+        divCartQtd = document.querySelector('[data-cart-qtd]');
 
         for(var i = 0; i < arCart.length; i++){
             qtyItem = parseInt(arCart[i].Qty);
@@ -191,13 +213,9 @@ function updateCart(){
 
         window.sessionStorage.setItem("Cart", JSON.stringify(arCart));
 
-        const pCartNumber = document.querySelector('[data-cart-number]');
         pCartNumber.innerHTML = totalItem.toString();
-
-        const pTotalPrice = document.querySelector('[data-total-price]');
         pTotalPrice.innerHTML = addRS(parseFloat(totalPr));
          
-        const divCartQtd = document.querySelector('[data-cart-qtd]');
         if(arCart.length > 2){
             var totalDisplay = 0,
             qtyTotalDisplay = 0,
@@ -209,76 +227,105 @@ function updateCart(){
             strQtyTotalDisplay = qtyTotalDisplay > 1? " itens" : " item";
             divCartQtd.innerHTML = "+ " + qtyTotalDisplay.toString() + strQtyTotalDisplay;
             divCartQtd.style.display = "block";
-        } else{
+        }else{
             divCartQtd.style.display = "none";
         }
     }
 }
 
+//Transforma em moeda
 function addRS(price) {
     return "R$ " + price.toFixed(2).toString();
 }
 
 //Gerar lista de produtos
-window.onload = function generateProductList() {  
+function generateProductList() {  
 
-    if(sessionStorage.getItem("Cart")){
-        window.sessionStorage.removeItem("Cart");
-    }
-
-    const contentSection = document.querySelector('[data-content-section]')
-    var productContent ='<table>';
-
-    for(var i = 0; i < arProduct.length; i++){
-        if ((i % 3) === 0){
-            //Primeiro item na linha
-            productContent += `<tr><td class="table-prod-space2"></td></tr><td class="table-prod">
-            <table><tr><td><img src="imagens/produtos/${arProduct[i][1]}" class="img-prod"></td></tr>
-            <tr><td class="prod-name">${arProduct[i][0]}</td></tr>
-            <tr><td class="prod-descr">${arProduct[i][2]}</td></tr>
-            <tr><td><p class="prod-price">R$ ${arProduct[i][3]}</p></td></tr>
-            <tr><td id="${i}" data-opt-prod><button id="${i}" class="addcart-button" data-add-cart>Adicionar no carrinho</button></td></tr></table>
-            </td><td class="table-prod-space"></td>`;
-
-            if ((i+1) === arProduct.length){
-                //Se for último item, última tag
-                productContent += `</tr>`;
-            }
-        } else if (((i+1) % 3) === 0){
-            //Terceiro item na linha
-            productContent += `<td class="table-prod"><table><tr><td>
-            <img src="imagens/produtos/${arProduct[i][1]}" class="img-prod"></td></tr>
-            <tr><td class="prod-name">${arProduct[i][0]}</td></tr>
-            <tr><td class="prod-descr">${arProduct[i][2]}</td></tr>
-            <tr><td class="prod-price">R$ ${arProduct[i][3]}</td></tr>
-            <tr><td id="${i}" data-opt-prod><button id="${i}" class="addcart-button" data-add-cart>Adicionar no carrinho</button></td>
-            </tr></table></td><td class="table-prod-space2"></td></tr>` 
-            if ((i+1)<arProduct.length){
-                //Se houver nova linha, criar espaço
-                productContent += `<tr><td colspan="7" class="table-prod-space"></td></tr>`;
-            }
+    var arBuild = [],
+    productContent = "";
+    const contentSection = document.querySelector('[data-content-section]');
+    
+    if(sessionStorage.getItem("Search")){
+        if(JSON.parse(sessionStorage.getItem("Search")) === "notfound"){
+            productContent = "Nenhum produto foi encontrado.";
+            contentSection.innerHTML = productContent;
+            return;
+        } else if (JSON.parse(sessionStorage.getItem("Search")) === ""){
+            arBuild = arProduct;
         } else {
-            //Segundo item na linha
-            productContent += `<td class="table-prod"><table><tr><td>
-            <img src="imagens/produtos/${arProduct[i][1]}" class="img-prod"></td></tr>
-            <tr><td class="prod-name">${arProduct[i][0]}</td></tr>
-            <tr><td class="prod-descr">${arProduct[i][2]}</td></tr>
-            <tr><td class="prod-price">R$ ${arProduct[i][3]}</td></tr>
-            <tr><td id="${i}" data-opt-prod><button id="${i}" class="addcart-button" data-add-cart>Adicionar no carrinho</button></td>
-            </tr></table></td><td class="table-prod-space"></td>`;
-
-            if ((i+1) === arProduct.length){
-                //Se for último item, última tag
-                productContent += `</tr>`;
-            }
+            arBuild = JSON.parse(sessionStorage.getItem("Search"));
         }
-        
+    } else {
+        arBuild = arProduct;
     }
-    productContent +='</table>';
-    contentSection.innerHTML = productContent;
 
-    findAndAddEvent("data-add-cart", "click", addCart);
-};
+    if (arBuild.length > 0){
+        productContent = '<table>';
+        for(var i = 0; i < arBuild.length; i++){
+            if ((i % 3) === 0){
+                //Primeiro item na linha
+                productContent += `<tr><td class="table-prod-space2"></td></tr><td class="table-prod">
+                <table><tr><td><img src="imagens/produtos/${arBuild[i][1]}" class="img-prod"></td></tr>
+                <tr><td class="prod-name">${arBuild[i][0]}</td></tr>
+                <tr><td class="prod-descr">${arBuild[i][2]}</td></tr>
+                <tr><td><p class="prod-price">R$ ${arBuild[i][3]}</p></td></tr>
+                <tr><td id="${arBuild[i][4]}" data-opt-prod><button id="${arBuild[i][4]}" class="addcart-button" data-add-cart>Adicionar no carrinho</button></td></tr></table>
+                </td><td class="table-prod-space"></td>`;
+    
+                if ((i+1) === arBuild.length){
+                    //Se for último item, última tag
+                    productContent += `</tr>`;
+                }
+            } else if (((i+1) % 3) === 0){
+                //Terceiro item na linha
+                productContent += `<td class="table-prod"><table><tr><td>
+                <img src="imagens/produtos/${arBuild[i][1]}" class="img-prod"></td></tr>
+                <tr><td class="prod-name">${arBuild[i][0]}</td></tr>
+                <tr><td class="prod-descr">${arBuild[i][2]}</td></tr>
+                <tr><td class="prod-price">R$ ${arBuild[i][3]}</td></tr>
+                <tr><td id="${arBuild[i][4]}" data-opt-prod><button id="${arBuild[i][4]}" class="addcart-button" data-add-cart>Adicionar no carrinho</button></td>
+                </tr></table></td><td class="table-prod-space2"></td></tr>` 
+                if ((i+1)<arBuild.length){
+                    //Se houver nova linha, criar espaço
+                    productContent += `<tr><td colspan="7" class="table-prod-space"></td></tr>`;
+                }
+            } else {
+                //Segundo item na linha
+                productContent += `<td class="table-prod"><table><tr><td>
+                <img src="imagens/produtos/${arBuild[i][1]}" class="img-prod"></td></tr>
+                <tr><td class="prod-name">${arBuild[i][0]}</td></tr>
+                <tr><td class="prod-descr">${arBuild[i][2]}</td></tr>
+                <tr><td class="prod-price">R$ ${arBuild[i][3]}</td></tr>
+                <tr><td id="${arBuild[i][4]}" data-opt-prod><button id="${arBuild[i][4]}" class="addcart-button" data-add-cart>Adicionar no carrinho</button></td>
+                </tr></table></td><td class="table-prod-space"></td>`;
+    
+                if ((i+1) === arBuild.length){
+                    //Se for último item, última tag
+                    productContent += `</tr>`;
+                }
+            }            
+        }
+        productContent +='</table>';
+        contentSection.innerHTML = productContent;
+        findAndAddEvent("data-add-cart", "click", addCart);
+
+        if(JSON.parse(sessionStorage.getItem("Cart")) !== ""){
+            var arCart = JSON.parse(sessionStorage.getItem("Cart"));
+            for(var i = 0; i < arCart.length; i++){
+                const objList = document.querySelectorAll('[data-opt-prod]');
+                for (const eachObj of objList) {
+                    if (eachObj.id == (arCart[i].ID).toString()){
+                        var tdProdContent = `<input id="${arCart[i].ID}" type="number" value="1" class="input-prod-qty" data-input-prod />
+                        <input type="image" id="${arCart[i].ID}" class="add-prod-qty" src="imagens/add.png" data-btn-add-prod />
+                        <input type="image" id="${arCart[i].ID}" class="del-prod" src="imagens/trash-can.png" data-btn-del-prod />`;
+                        eachObj.innerHTML = tdProdContent;
+                    }
+                }            
+            }      
+            buildCart();       
+        }
+    }
+}
 
 //Evento do botão Adicionar no carrinho
 const addCart = (evento) => {
@@ -290,13 +337,18 @@ const addCart = (evento) => {
     
     evento.target.parentNode.innerHTML = tdProdContent;
 
-    //Verificar se já existe algo no carrinho, adiciona item, quantidade.
-    if (sessionStorage.getItem("Cart")){
+    //Verificar se já existe algo no carrinho e adiciona item e quantidade.
+    console.log(JSON.parse(sessionStorage.getItem("Cart")) !== "");
+    if (JSON.parse(sessionStorage.getItem("Cart")) !== ""){
         var arCart = JSON.parse(sessionStorage.getItem("Cart"));
         arCart.push({ID:evento.target.id, Qty:1, Pr:arProduct[evento.target.id][3]});
     } else {
         var arCart = [{ID:evento.target.id, Qty:1, Pr:arProduct[evento.target.id][3]}];
     }
+
+    findAndAddEvent("data-btn-add-prod", "click", addProd);
+    findAndAddEvent("data-btn-del-prod", "click", delProd);
+    findAndAddEvent("data-input-prod", "change", editProdInput);
 
     window.sessionStorage.setItem("Cart", JSON.stringify(arCart));
 
@@ -354,8 +406,42 @@ const clearSession = (evento) => {
     resetSessionCart();
 }
 
-//Funções visuais
+//Evento do input e do botão Pesquisar
+const searchProduct = (evento) => {
+    evento.preventDefault();
 
+    const searchInput = document.querySelector('[data-search-input]');
+
+    var arFound = [],
+    searchInputValue = searchInput.value;
+
+    if(searchInputValue != ""){
+        for(var i = 0; i < arProduct.length;i++){
+            if((arProduct[i][0].toLowerCase()).includes(searchInputValue.toLowerCase()) || (arProduct[i][2].toLowerCase()).includes(searchInputValue.toLowerCase())){
+                if(arFound){
+                    arFound.push([arProduct[i][0], arProduct[i][1], arProduct[i][2], arProduct[i][3], i]);
+                } else {
+                    arFound = [[arProduct[i][0], arProduct[i][1], arProduct[i][2], arProduct[i][3], i]];
+                }
+            }
+        }
+
+        if(arFound != ""){
+            window.sessionStorage.setItem("Search", JSON.stringify(arFound));
+        } else {
+            window.sessionStorage.setItem("Search", JSON.stringify("notfound"));
+        }
+
+        generateProductList();
+    } else {
+        window.sessionStorage.setItem("Search", JSON.stringify(""));
+        generateProductList();
+    }
+}
+
+
+
+//Funções visuais
 function positionCart(){
     const HiddenCart = document.querySelector('[data-hidden-cart]');
     const buttonCart = document.querySelector('[data-button-cart]');
@@ -379,16 +465,20 @@ const ButtonHiddenCart = (evento) => {
 }
 
 //Eventos a objetos
-
 window.addEventListener('resize', positionCart);
 
 const ButtonCart = document.querySelector('[data-button-cart]');
 ButtonCart.addEventListener('click', ButtonShowCart);
 
-const closeCart = document.querySelector('[data-close-cart]')
+const closeCart = document.querySelector('[data-close-cart]');
 closeCart.addEventListener('click', ButtonHiddenCart);
 
-const viewCart = document.querySelector('[data-view-cart]')
+const viewCart = document.querySelector('[data-view-cart]');
 viewCart.addEventListener('click', clearSession);
 
+const searchInput = document.querySelector('[data-search-input]');
+searchInput.addEventListener('change', searchProduct);
+
+const searchButton = document.querySelector('[data-search-button]');
+searchButton.addEventListener('click', searchProduct);
 
