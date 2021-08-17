@@ -10,6 +10,8 @@ Conteúdo adicional
 
 - https://scrimba.com/learn/design
 - https://www.freecodecamp.org/
+- https://rockcontent.com/br/blog/web-design-responsivo/
+- https://kinsta.com/pt/blog/design-responsivo-web/
 
 # Desafio
 
@@ -69,3 +71,8 @@ Para isso clique em `Contribute` e `Open Pull Request`. Depois basta confirmar a
 Disponibilize o seu projeto através do [GitHub Pages](https://pages.github.com/).
 
 ## :trophy: Finalizaram o desafio :trophy:
+  
+<a href="https://jand-s.github.io/alura-cursos/ibuy/"><img width="50" height="50" src="https://github.com/Jand-S.png"></img></a>
+<a href="https://estevamdefreitas.github.io/primeiras-paginas-web-2021/"><img width="50" height="50" src="https://github.com/EstevamDeFreitas.png"></img></a>
+<a href="https://feehvecch.github.io/primeiras-paginas-web-2021/"><img width="50" height="50" src="https://github.com/feehvecch.png"></img></a>
+<a href="https://lilianjaf.github.io/primeiras-paginas-web-2021/"><img width="50" height="50" src="https://github.com/lilianjaf.png"></img></a>
