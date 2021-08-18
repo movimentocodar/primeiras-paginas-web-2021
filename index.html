@@ -1,11 +1,167 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+ <!DOCTYPE html> 
+ <html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Produtos - Confeitaria</title>
+        <link rel="stylesheet" href= "reset.css">
+        <link rel="stylesheet" href= "style.css" > 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        
+    </head>
+    <body>
+       
+    <div class="carrinhodecompras">
+        <img src="" />
+        <div class="carrinhoquantidade">
+            <button class="quantidadereduz">-</button>
+            <div class="quantidadeatual">1</div>
+            <button class="quantidadeaumenta">+</button>
+
+        </div>
+    </div>
+        <header>
+            <div class="Usuario"><img src="administrador.png"> admin </div>
+            <div class="caixaSuperior">
+                <h1> Confeitaria Moura </h1>
+             </div>
+
+            <div class="Menu"> 
+            <span>8</span>
+            <span class="material-icons"> shopping_cart </span>
+
+            </div>
+           
+        </header>
+
+       <main>
+
+            <div>
+                <form class="pesquisa">
+                <input type="search" id="texto" >
+                <img src="lupa.png" class="btn">
+                 
+        
+                </form>
+            </div>    
+            <div>
+                <ul class="produtos"> 
+                    <li>
+                        
+                        <img src="bolo3.jpg">
+                        <h2> Bolos de aniversário </h2>
+                        <p class="produto-descricao">Qualquer bolo de aniversário com decoração</p>
+                        <p class="produto-preco">R$ 120,00</p>
+                        <button class="botaocomprarefinalizar">Comprar</button>
+                    </li>
+                    <li>
+                        
+                        <img src="bolocafe.jpg">
+                        <h2>Bolos para café da tarde </h2>
+                        <p class="produto-descricao">Bolos de fubá, laranja, cenoura e chocolate</p>
+                        <p class="produto-preco">R$ 20,00</p>
+                        <button class="botaocomprarefinalizar" >Comprar</button>
+                    </li>
+                    <li>
+                    
+                        <img src="salgados.png">
+                        <h2>Salgados</h2>
+                        <p class="produto-descricao">Coxinha, risole, bolinho de queijo e kibe  </p>
+                        <p class="produto-preco">R$ 40,00</p>
+                        <button class="botaocomprarefinalizar">Comprar</button>
+                    </li>
+                    <li>
+                        
+                        <img src="sobremesa.png">
+                        <h2>Sobremesas </h2>
+                        <p class="produto-descricao">Pudim, sorvete e Doces em geral</p>
+                        <p class="produto-preco">R$ 50,00</p>
+                        <button class="botaocomprarefinalizar">Comprar</button>
+                    </li>
     
-</body>
+                
+                </ul>
+            </div>
+
+            
+                
+
+        </main>
+        <aside>
+            <div class="areadocarrinho">
+                <div class="menufechado">
+                    <span class="material-icons">close</span>
+                </div>
+                <h1>Itens no Carrinho</h1>
+                <div class="produto"></div>
+                <div class="descrição do item"> 
+                    <div class="totalitem subtotal">
+                        <span>Subtotal</span>
+                        <span>R$ ---</span>
+                    </div>
+                </div>
+                <div class="finalizarpedido">Finalizar a compra</div>
+
+            </div>
+
+            
+
+
+        </aside>
+       <div class="areadajaneladecompras">
+           <div class="modelodocorpodajaneladecompras">
+               <div class="modelogrande">
+                   <img src="" />
+                   <div class="modelodasinformaçoes">
+                       <h1>Suas compras</h1>
+                       <div class="modelodasinformaçoesdescricao"></div>
+                       <div class="modelodasinformaçoesTAMANHO">
+                           <div class="modelodasinformaçoesESCALA">ESCALA</div>
+                           <div class="modelsinfo--sizes"></div>
+                       </div>  
+                       <div class="modelsinfo--partedopreco">
+                           <div class="modelsinfo--sector">preço</div>
+                           <div class="modelsinfo--preço">
+                                <div class="modelsinfo--preçoAtual">R$</div>
+                                <div class="modelsinfo--quantidade">
+                                    <button class="Modelsinfo--quantidademenos"><span class="material-icons-outlined">-</span></button>
+                                    <div class="modelsinfo--quantidade">1</div>
+                                    <button class="modelsinfo--quantidademais"><span class="material-icons-outlined">+</span></button>
+
+                                </div>
+                           </div>
+
+
+                        </div>  
+                        <div class="botaocomprarefinalizar">Adicionar no carrinho</div>
+                        <div class="botaocomprarefinalizar">cancelar</div>
+
+                        
+                       
+                   </div>
+               </div>
+           </div>
+       </div>
+       
+       <script type="text/javascript" src="js.js"></script>
+       <script type="text/javascript"src="js/script.js"></script>
+       
+       
+       
+       
+       
+       
+        <button class="botaocomprarefinalizar">Finalizar</button>
+       
+       
+       
+    </body>
+
+    <footer> 
+            
+        <img src="cupcake.png">
+        <p class="copyright">&copy; Copyright Confeitaria Moura - 2021</p>
+
+
+    </footer>
 </html>

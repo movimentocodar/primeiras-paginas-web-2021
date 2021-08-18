@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: italic , Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    min-height: auto;
+
+}
+
+.models {
+    display: inline-flex;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 60px;
+    background: #FFFAD9;
+    padding: 60px 0;
+    justify-content:flex-end;
+    align-items: center;
+    
+}
+
+header h1 {
+
+    font-size: 50px;
+    font-style:italic;
+    font-weight: bolder;
+    position:absolute;
+    right: absolute;
+
+}
+
+.Usuario {
+    position:absolute;
+    top: 0;
+    right: 10%;
+}
+.Menu {
+    position:absolute;
+    top: 80px;
+    right: 0;
+    margin-right: 15px;
+    font-size: 26px;
+    background-color: #FFFAD9;
+    padding: 5px 20px;
+    border-radius: 5px;
+
+}
+
+.Menu span {
+
+    margin-right: 10px;
+
+}
+
+aside {
+    display: inline-block;
+    background: #9CCBE6;
+    width: 10%;
+    font-family: italic Arial, Helvetica, sans-serif;
+    position: absolute;
+    right: 10%;
+}
+.areadocarrinho {
+    display: inline-block;
+    width: 5% ;
+    padding:20px
+
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+
+
+}
+
+
+
+
+.produtos {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 60px 0;
+    display: inline-block;
+
+}
+
+
+.produtos li{
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+    vertical-align: top;
+    margin: 0 1.2%;
+    padding: 20px 15px ;
+    box-sizing: border-box;
+    border: 2px solid #FFFAD9;
+    border-radius: 10px;
+}
+
+.produtos li:hover{
+    border-color:#E64E5B ;
+}
+.produtos li:active{
+    border-color:#669943;
+}
+.produtos li:hover h2 {
+    font-size: 30px;
+}
+.produtos h2 {
+    font-size: 25px;
+    font-style: italic;
+    font-weight:bold;
+
+
+}
+.produto-preco {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: red;
+}
+.produto-descricao {
+    font-size: 18px;
+    
+}
+
+.botaocomprarefinalizar {
+    
+    font-family: italic;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color:#fff;
+    background:#43E6C5;
+
+    }
+
+.botaocomprarefinalizar:hover{
+    background: #259982;
+
+}
+
+.botaocomprarefinalizar:active{
+
+    position:relative
+
+    
+
+}
+
+.pesquisa {
+    width: 400px;
+    height: 40px;
+    margin: 200px auto;
+
+
+}
+
+#texto {
+    width: 350px ;
+    height: 40px;
+    float: left;
+    font-family: italic Arial, Helvetica, sans-serif ;
+    font-size: 20px;
+}
+
+#texto:focus{
+    border: solid 2px #43E6C5 ;
+
+
+
+}
+
+.btn {
+    width: 30px;
+    height: 40px;
+    background-color:#43E6C5 ;
+    padding: 5px 10px ;
+    cursor: pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    background:url("bg.jpg");
+    padding:40px 0;
+    margin-top: 1000px;
+
+    
+}
+.copyright {
+    color: black;
+    font-size: 13px;
+    margin-top: 20px;
+
+}
