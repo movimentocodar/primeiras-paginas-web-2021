@@ -72,8 +72,11 @@ const criarProduto = (imagem, descricao, preco, indice) => {
           <p data-produto-descricao>${descricao}</p>
           <p class="card-price" data-produto-preco> R$ ${preco}</p>
           <input type="number"  min="0" max="999" class="card-quantidade" value="1" data-produto-quantidade>  
-          <button type="button" data-produto-comprar=${indice} >Comprar</button>
      </div>`;
+
+  //   <button type="button" data-produto-comprar=${indice} >Comprar</button>
+
+  produto.appendChild(BotaoComprar(indice));
   listaProdutos.appendChild(produto);
 };
 
@@ -84,9 +87,11 @@ const carregarProdutos = () => {
 };
 
 const adicionarProduto = (evento) => {
-  const elemento = evento.target;
+  const botaoComprar = evento.target;
 
-  const produto = elemento.parentElement;
+  const produto = botaoComprar.parentElement;
+
+ // produto.classList.toggle("done");
 
   const produtoImagem = produto.querySelector("[data-produto-imagem]");
   const produtoDescricao = produto.querySelector("[data-produto-descricao]");
@@ -94,7 +99,7 @@ const adicionarProduto = (evento) => {
   const produtoPreco = produto.querySelector("[data-produto-preco]");
   const produtoCodigo = produto.querySelector("[data-produto-comprar]");
 
-  if (elemento.type === "button") {
+  if (botaoComprar.type === "submit") {
     let valorTotalProduto = 0;
     const imagem = produtoImagem.src;
     const descricao = produtoDescricao.textContent;
@@ -171,10 +176,9 @@ carregarCarrinho = (codigo, imagem, descricao, quantidade, preco, indice) => {
          <p data-carrinho-valor=${preco.toFixed(
            2
          )} class="carrinho-compras-valor">R$${preco.toFixed(2)}</p>
-      </div>
-  
-          <button type="button" class="carrinho-compras-excluir" data-produto-comprar=${codigo} data-carrinho-excluir=${indice}></button>`;
+      </div>`;
 
+  lista.appendChild(BotaoExcluir(codigo, indice));
   carrinho.appendChild(lista);
 };
 
@@ -190,24 +194,22 @@ const limparCarrinho = () => {
 };
 
 const excluirItem = (evento) => {
-  const produto = evento.target;
+  const botaoExcluir = evento.target;
 
-  if (produto.type === "button") {
-    const botaoExcluir = evento.target;
-    const lista = botaoExcluir.parentElement;
-    console.log(lista);
-    const produtoQuantidade = lista.querySelector("[data-carrinho-quantidade]");
+  if (botaoExcluir.type === "submit") {
+    const produto = botaoExcluir.parentElement;
+    const produtoQuantidade = produto.querySelector("[data-carrinho-quantidade]");
     const quantidade = produtoQuantidade.getAttribute(
       "data-carrinho-quantidade"
     );
-    const produtoPreco = lista.querySelector("[data-carrinho-valor]");
+    const produtoPreco = produto.querySelector("[data-carrinho-valor]");
     const preco = produtoPreco.getAttribute("data-carrinho-valor");
-    const itemList = lista.querySelector("[data-carrinho-excluir]");
+    const itemList = produto.querySelector("[data-carrinho-excluir]");
     const item = itemList.getAttribute("[data-carrinho-excluir]");
     valorTotal -= preco;
     quantidadeTotal -= parseInt(quantidade);
 
-    lista.remove();
+    produto.remove();
     listaDeCompras.splice(item, 1);
 
     carrinhoValorTotal.textContent = `R$ ${valorTotal.toFixed(2)}`;
@@ -297,11 +299,25 @@ const fecharPedido = (evento) => {
   carrinhoQuantidadeitens.textContent = 0;
 };
 
+const BotaoComprar = (indice) => {
+  const botaoComprar = document.createElement('button');
+  botaoComprar.setAttribute('data-produto-comprar', indice);
+  botaoComprar.innerText = "Comprar";
+  botaoComprar.addEventListener('click', adicionarProduto);
+  return botaoComprar;
+};
+
 carregarProdutos();
-const comprarProduto = document.querySelector("[data-lista-produtos]");
-comprarProduto.addEventListener("click", adicionarProduto);
-const deletarProduto = document.querySelector("[data-carrinho-lista]");
-deletarProduto.addEventListener("click", excluirItem);
+
+const BotaoExcluir = (codigo, indice) => {
+  const botaoExcluir = document.createElement('button');
+  botaoExcluir.classList.add('carrinho-compras-excluir');
+  botaoExcluir.setAttribute('data-produto-comprar', codigo);
+  botaoExcluir.setAttribute('data-carrinho-excluir', indice);
+  botaoExcluir.addEventListener('click', excluirItem);
+  return botaoExcluir;
+};
+
 const departamento = document.querySelector("[data-departamento]");
 departamento.addEventListener("click", filtrarDepartamento);
 const buscarProduto = document.querySelector("[data-filtrar-produto]");
