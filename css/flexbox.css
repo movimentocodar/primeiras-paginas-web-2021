@@ -19,3 +19,15 @@
     justify-content: space-between;
   }
   
+  
+.listaProdutos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    margin: 12px;
+  }
+  
+  .navegacao {
+    display: flex;
+  }
+  

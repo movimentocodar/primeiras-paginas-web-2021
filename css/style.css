@@ -116,4 +116,88 @@ body {
     color: white;
     font-size: small;
   }
+
   
+.container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .produtos {
+    width: 85%;
+    padding: 5px;
+  }
+  
+
+  .navegacao p:last-child {
+    text-transform: capitalize;
+  }
+  
+  h2 {
+    font-size: 25px;
+    padding: 20px;
+  }
+  
+  .listaProdutos .card:hover {
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px 0px #7d8f97;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin: 1%;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  
+  .card p {
+    margin: 0 0 0.3em;
+  }
+  
+  .card-img-top {
+    padding: 20px;
+    width: 150px;
+  }
+  
+  .card-price {
+    color: #585050;
+    font-size: 15px;
+    padding: 10px;
+  }
+  
+  .card-quantidade {
+    width: 58px;
+    padding: 4px;
+    text-align: center;
+  }
+  
+  .card-div-button {
+    padding: 10px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #156f96;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 15px;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 11px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
