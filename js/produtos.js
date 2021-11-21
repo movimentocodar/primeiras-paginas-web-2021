@@ -91,7 +91,7 @@ const adicionarProduto = (evento) => {
 
   const produto = botaoComprar.parentElement;
 
- // produto.classList.toggle("done");
+  // produto.classList.toggle("done");
 
   const produtoImagem = produto.querySelector("[data-produto-imagem]");
   const produtoDescricao = produto.querySelector("[data-produto-descricao]");
@@ -198,7 +198,9 @@ const excluirItem = (evento) => {
 
   if (botaoExcluir.type === "submit") {
     const produto = botaoExcluir.parentElement;
-    const produtoQuantidade = produto.querySelector("[data-carrinho-quantidade]");
+    const produtoQuantidade = produto.querySelector(
+      "[data-carrinho-quantidade]"
+    );
     const quantidade = produtoQuantidade.getAttribute(
       "data-carrinho-quantidade"
     );
@@ -300,27 +302,27 @@ const fecharPedido = (evento) => {
 };
 
 const BotaoComprar = (indice) => {
-  const botaoComprar = document.createElement('button');
-  botaoComprar.setAttribute('data-produto-comprar', indice);
+  const botaoComprar = document.createElement("button");
+  botaoComprar.setAttribute("data-produto-comprar", indice);
   botaoComprar.innerText = "Comprar";
-  botaoComprar.addEventListener('click', adicionarProduto);
+  botaoComprar.addEventListener("click", adicionarProduto);
   return botaoComprar;
 };
 
 const BotaoExcluir = (codigo, indice) => {
-  const botaoExcluir = document.createElement('button');
-  botaoExcluir.classList.add('carrinho-compras-excluir');
-  botaoExcluir.setAttribute('data-produto-comprar', codigo);
-  botaoExcluir.setAttribute('data-carrinho-excluir', indice);
-  botaoExcluir.addEventListener('click', excluirItem);
+  const botaoExcluir = document.createElement("button");
+  botaoExcluir.classList.add("carrinho-compras-excluir");
+  botaoExcluir.setAttribute("data-produto-comprar", codigo);
+  botaoExcluir.setAttribute("data-carrinho-excluir", indice);
+  botaoExcluir.addEventListener("click", excluirItem);
   return botaoExcluir;
 };
 
 const FiltroDepartamentos = () => {
- const filtroDepartamentos = document.createElement('div');
- const menuDepartamento = document.querySelector('[data-menu-departamento]');
+  const filtroDepartamentos = document.createElement("div");
+  const menuDepartamento = document.querySelector("[data-menu-departamento]");
 
-filtroDepartamentos.innerHTML = `
+  filtroDepartamentos.innerHTML = `
 <ul class="menu__list r-list" data-departamento>
 <li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
         data-departamento="todos">Todos os
@@ -336,17 +338,26 @@ filtroDepartamentos.innerHTML = `
         data-departamento="padaria">Padaria</a></li>
 <li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
         data-departamento="congelados">Congelados</a></li>
-</ul>`
-menuDepartamento.appendChild(filtroDepartamentos);
-filtroDepartamentos.addEventListener('click', filtrarDepartamento);
-return filtroDepartamentos;
+</ul>`;
+  menuDepartamento.appendChild(filtroDepartamentos);
+  filtroDepartamentos.addEventListener("click", filtrarDepartamento);
+  return filtroDepartamentos;
+};
 
-}
+const InputFiltrarProduto = () => {
+  const form = document.querySelector('[data-form]');
+  const inputBuscarProduto = document.createElement('div');
+  inputBuscarProduto.setAttribute('data-form-pesquisa', '');
+  inputBuscarProduto.innerHTML = `<input type="search" id="busca" name="busca" data-filtrar-produto
+ placeholder="Pesquise por produto..."><svg alt="lupa"></svg>`;
+  inputBuscarProduto.addEventListener("input", filtrarProduto);
 
+  form.appendChild(inputBuscarProduto);
+  return inputBuscarProduto;
+};
 
+InputFiltrarProduto();
 carregarProdutos();
 FiltroDepartamentos();
-const buscarProduto = document.querySelector("[data-filtrar-produto]");
-buscarProduto.addEventListener("input", filtrarProduto);
 const finalizarCompra = document.querySelector("[data-finalizar-compra]");
 finalizarCompra.addEventListener("click", fecharPedido);
