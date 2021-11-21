@@ -190,6 +190,40 @@ const limparCarrinho = () => {
   
   };
 
+  const excluirItem = (evento) => {
+    const produto = evento.target;
+  
+    if (produto.type === "button") {
+      const botaoExcluir = evento.target;
+      const lista = botaoExcluir.parentElement;
+      console.log(lista);
+      const produtoQuantidade = lista.querySelector("[data-carrinho-quantidade]");
+      const quantidade = produtoQuantidade.getAttribute(
+        "data-carrinho-quantidade"
+      );
+      const produtoPreco = lista.querySelector("[data-carrinho-valor]");
+      const preco = produtoPreco.getAttribute("data-carrinho-valor");
+      const itemList = lista.querySelector("[data-carrinho-excluir]");
+      const item = itemList.getAttribute("[data-carrinho-excluir]");
+      valorTotal -= preco;
+      quantidadeTotal -= parseInt(quantidade);
+  
+      lista.remove();
+      listaDeCompras.splice(item, 1);
+  
+      carrinhoValorTotal.textContent = `R$ ${valorTotal.toFixed(2)}`;
+      carrinhoQuantidadeTotal.textContent = `${quantidadeTotal}`;
+      carrinhoQuantidadeitens.textContent = `${quantidadeTotal}`;
+      if (listaDeCompras.length === 0) {
+        const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
+        carrinhoVazio.textContent = "Carrinho Vazio!";
+      }
+    }
+  };
+
 carregarProdutos();
 const comprarProduto = document.querySelector("[data-lista-produtos]");
 comprarProduto.addEventListener("click", adicionarProduto);
+const deletarProduto = document.querySelector("[data-carrinho-lista]");
+deletarProduto.addEventListener("click", excluirItem);
+
