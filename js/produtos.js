@@ -1,8 +1,7 @@
 import banco from "./banco.js";
-import InputFiltrarProduto from "../componentes/input/filtrarProdutos.js";
+import pesquisarProduto from "../componentes/input/produto.js";
 import Mensagem from "../componentes/mensagem.js";
-import CriarProduto from "../componentes/criarProduto.js"
-
+import CriarCard from "../componentes/criarCard.js";
 
 let listaDeCompras = [];
 let valorTotal = 0;
@@ -12,13 +11,11 @@ let carrinhoQuantidadeitens = document.querySelector(
 );
 let navegacao = document.querySelector("[data-navegacao]");
 
-
 const carregarProdutos = () => {
   banco.forEach((produto, indice) =>
-    CriarProduto(produto.imagem, produto.descricao, produto.preco, indice)
+    CriarCard(produto.imagem, produto.descricao, produto.preco, indice)
   );
 };
-
 
 function calcularListaDeCompra(produto, indice) {
   carregarCarrinho(
@@ -120,7 +117,7 @@ const filtrarDepartamento = (evento) => {
 function listaPorDeparmento(departamento) {
   let item = [];
   navegacao.textContent = departamento;
-  limparProdutos();
+  pesquisarProduto.limparProdutos();
 
   if (departamento === "todos") {
     carregarProdutos();
@@ -137,7 +134,7 @@ function listaPorDeparmento(departamento) {
     Mensagem("Produto(s) não encontrado!", "[data-lista-produtos]");
   } else {
     item.forEach((itens, indice) =>
-      CriarProduto(itens.imagem, itens.descricao, itens.preco, indice)
+      CriarCard(itens.imagem, itens.descricao, itens.preco, indice)
     );
   }
 }
@@ -149,7 +146,6 @@ const fecharPedido = (evento) => {
   carrinhoQuantidadeTotal.textContent = "0 und.";
   carrinhoQuantidadeitens.textContent = 0;
 };
-
 
 const BotaoExcluir = (codigo, indice) => {
   const botaoExcluir = document.createElement("button");
@@ -249,7 +245,7 @@ const AreaCarrinho = () => {
   return areaCarrinho;
 };
 
-InputFiltrarProduto();
+pesquisarProduto.CriarInput();
 FiltroDepartamentos();
 carregarProdutos();
 AreaCarrinho();

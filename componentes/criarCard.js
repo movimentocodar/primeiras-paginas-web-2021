@@ -1,5 +1,5 @@
 import BotaoComprar from "./botoes/comprarProduto.js";
-const CriarProduto = (imagem, descricao, preco, indice) => {
+const CriarCard = (imagem, descricao, preco, indice) => {
   const listaProdutos = document.querySelector("[data-lista-produtos]");
   const produto = document.createElement("div");
   produto.classList.add("card");
@@ -14,4 +14,4 @@ const CriarProduto = (imagem, descricao, preco, indice) => {
   listaProdutos.appendChild(produto);
 };
 
-export default CriarProduto;
+export default CriarCard;

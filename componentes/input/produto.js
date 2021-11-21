@@ -1,8 +1,8 @@
 import banco from "../../js/banco.js";
 import Mensagem from "../mensagem.js";
-import CriarProduto from "../criarProduto.js";
+import CriarCard from "../criarCard.js";
 
-const InputFiltrarProduto = () => {
+const CriarInput = () => {
   const form = document.querySelector("[data-form]");
   const inputBuscarProduto = document.createElement("div");
   inputBuscarProduto.setAttribute("data-form-pesquisa", "");
@@ -29,7 +29,7 @@ const filtrarProduto = (evento) => {
       Mensagem("Produto(s) não encontrado!", "[data-lista-produtos]");
     } else {
       item.forEach((itens, indice) =>
-        CriarProduto(itens.imagem, itens.descricao, itens.preco, indice)
+        CriarCard(itens.imagem, itens.descricao, itens.preco, indice)
       );
     }
   }
@@ -42,4 +42,7 @@ const limparProdutos = () => {
   }
 };
 
-export default InputFiltrarProduto;
+export default {
+  CriarInput,
+  limparProdutos,
+};
