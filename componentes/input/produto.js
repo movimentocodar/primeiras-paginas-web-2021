@@ -1,4 +1,4 @@
-import banco from "../../js/banco.js";
+import Banco from "../../js/banco.js";
 import Mensagem from "../mensagem.js";
 import CriarCard from "../criarCard.js";
 
@@ -18,7 +18,7 @@ const filtrarProduto = (evento) => {
   const texto = evento.target.value;
   let item = [];
 
-  for (let p of banco) {
+  for (let p of Banco.hugoogle) {
     if (p.descricao.toLowerCase().indexOf(texto.toLowerCase()) > -1) {
       item.push(p);
     }
@@ -42,7 +42,13 @@ const limparProdutos = () => {
   }
 };
 
+const limparCampo = () => {
+  const input = document.querySelector("[data-filtrar-produto]");
+  input.value = "";
+};
+
 export default {
   CriarInput,
   limparProdutos,
+  limparCampo,
 };
