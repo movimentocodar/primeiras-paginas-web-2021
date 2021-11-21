@@ -244,9 +244,13 @@ function listaPorDeparmento(departamento) {
     }
   }
 
+  if (item.length === 0) {
+    produtoNaoEncontrado();
+  } else {
     item.forEach((itens, indice) =>
       criarProduto(itens.imagem, itens.descricao, itens.preco, indice)
     );
+  }
 }
 
 const limparProdutos = () => {
@@ -267,20 +271,31 @@ const filtrarProduto = (evento) => {
 
     limparProdutos();
 
+    if (item.length === 0) {
+      produtoNaoEncontrado();
+    } else {
       item.forEach((itens, indice) =>
         criarProduto(itens.imagem, itens.descricao, itens.preco, indice)
       );
+    }
   }
 };
 
-const fecharPedido = (evento) =>{
-  
-    listaDeCompras.splice(0, listaDeCompras.length);
-    limparCarrinho();
-    carrinhoValorTotal.textContent = "R$ 0.00";
-    carrinhoQuantidadeTotal.textContent = "0 und." ;
-    carrinhoQuantidadeitens.textContent = 0 ;
-  }
+function produtoNaoEncontrado() {
+  const div = document.createElement("div");
+  const lista = document.querySelector("[data-lista-produtos]");
+
+  div.innerHTML = `<p>Produto(s) não encontrado!</p>`;
+  lista.appendChild(div);
+}
+
+const fecharPedido = (evento) => {
+  listaDeCompras.splice(0, listaDeCompras.length);
+  limparCarrinho();
+  carrinhoValorTotal.textContent = "R$ 0.00";
+  carrinhoQuantidadeTotal.textContent = "0 und.";
+  carrinhoQuantidadeitens.textContent = 0;
+};
 
 carregarProdutos();
 const comprarProduto = document.querySelector("[data-lista-produtos]");
@@ -291,5 +306,5 @@ const departamento = document.querySelector("[data-departamento]");
 departamento.addEventListener("click", filtrarDepartamento);
 const buscarProduto = document.querySelector("[data-filtrar-produto]");
 buscarProduto.addEventListener("input", filtrarProduto);
-const finalizarCompra = document.querySelector('[data-finalizar-compra]')
-finalizarCompra.addEventListener('click', fecharPedido);
+const finalizarCompra = document.querySelector("[data-finalizar-compra]");
+finalizarCompra.addEventListener("click", fecharPedido);

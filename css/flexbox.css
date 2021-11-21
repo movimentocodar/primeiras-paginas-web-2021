@@ -21,11 +21,11 @@
 }
 
 .conteudoPrincipal .container {
-    display: flex;
-    align-items: top;
-    margin-top: 1%;
-    justify-content: space-around;
-  }
+  display: flex;
+  align-items: top;
+  margin-top: 1%;
+  justify-content: space-around;
+}
 
 .listaProdutos {
   display: flex;
@@ -64,4 +64,34 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+@media screen and (max-width: 768px) {
+  .atendimento {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cabecalhoPrincipal {
+    flex-direction: column;
+  }
+
+  .menu__list {
+    flex-direction: column;
+  }
+
+  .conteudoPrincipal .container {
+    flex-direction: column;
+  }
+
+  .navegacao {
+    flex-direction: column;
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    flex-direction: column;
+  }
 }
