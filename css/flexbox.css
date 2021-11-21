@@ -46,3 +46,14 @@
   align-items: left;
   justify-content: start;
 }
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contatos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

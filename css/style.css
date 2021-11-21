@@ -300,3 +300,55 @@ h2 {
   margin: 11px;
   cursor: pointer;
 }
+
+footer {
+  color: #ffffff;
+  font-weight: lighter;
+  text-align: center;
+  padding: 10px;
+  background-color: #156f96;
+  border-top: 1px solid #333;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+}
+
+.facebook {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  border: none;
+  outline: none;
+  background: url(../imagens/svg/facebook.svg) 0 0 no-repeat;
+  cursor: pointer;
+}
+
+.twitter {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  border: none;
+  outline: none;
+  background: url(../imagens/svg/twitter.svg) 0 0 no-repeat;
+  cursor: pointer;
+}
+
+.instagram {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  border: none;
+  outline: none;
+  background: url(../imagens/svg/instagram.svg) 0 0 no-repeat;
+  cursor: pointer;
+}
+
+footer {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.contatos a {
+  padding: 0px 20px;
+}
