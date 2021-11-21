@@ -352,3 +352,51 @@ footer {
 .contatos a {
   padding: 0px 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .atendimento li {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+  .produto {
+    width: 100%;
+  }
+
+  .carrinho {
+    width: 100%;
+  }
+
+  header div form {
+    width: 100%;
+  }
+
+  header div form svg {
+    left: 85%;
+  }
+
+  .cabecalhoPrincipal-nav {
+    padding-top: 15px;
+  }
+
+  .navegacao p {
+    padding-top: 10px;
+  }
+
+  .navegacao p:last-child {
+    font-weight: bold;
+  }
+
+  .produtos {
+    width: 100%;
+  }
+
+  .card {
+    width: 95%;
+    margin: 5%;
+  }
+
+  footer p {
+    padding-top: 5px;
+  }
+}
