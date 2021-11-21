@@ -52,10 +52,6 @@ let banco = [
 let listaDeCompras = [];
 let valorTotal = 0;
 let quantidadeTotal = 0;
-let carrinhoValorTotal = document.querySelector("[data-carrinho-total]");
-let carrinhoQuantidadeTotal = document.querySelector(
-  "[data-carrinho-quantidade]"
-);
 let carrinhoQuantidadeitens = document.querySelector(
   "[data-carrinho-quantidade-itens]"
 );
@@ -65,7 +61,6 @@ const criarProduto = (imagem, descricao, preco, indice) => {
   const listaProdutos = document.querySelector("[data-lista-produtos]");
   const produto = document.createElement("div");
   produto.classList.add("card");
-  // produto.setAttribute("style", "width:100%;");
   produto.innerHTML = `
      <div class="card-body">
           <img src=${imagem}  class="card-img-top" alt="${descricao}" data-produto-imagem>
@@ -73,9 +68,6 @@ const criarProduto = (imagem, descricao, preco, indice) => {
           <p class="card-price" data-produto-preco> R$ ${preco}</p>
           <input type="number"  min="0" max="999" class="card-quantidade" value="1" data-produto-quantidade>  
      </div>`;
-
-  //   <button type="button" data-produto-comprar=${indice} >Comprar</button>
-
   produto.appendChild(BotaoComprar(indice));
   listaProdutos.appendChild(produto);
 };
@@ -88,11 +80,7 @@ const carregarProdutos = () => {
 
 const adicionarProduto = (evento) => {
   const botaoComprar = evento.target;
-
   const produto = botaoComprar.parentElement;
-
-  // produto.classList.toggle("done");
-
   const produtoImagem = produto.querySelector("[data-produto-imagem]");
   const produtoDescricao = produto.querySelector("[data-produto-descricao]");
   const produtoQuantidade = produto.querySelector("[data-produto-quantidade]");
@@ -116,7 +104,6 @@ const adicionarProduto = (evento) => {
     if (isCodigo) {
       listaDeCompras.forEach((carrinho) => {
         if (carrinho.codigo === codigo) {
-          console.log(`codigo encontrado ${codigo}`);
           carrinho.preco += valorTotalProduto;
 
           carrinho.quantidade =
@@ -162,14 +149,10 @@ function calcularListaDeCompra(produto, indice) {
 
 carregarCarrinho = (codigo, imagem, descricao, quantidade, preco, indice) => {
   const carrinho = document.querySelector("[data-carrinho-lista]");
-
   const lista = document.createElement("li");
   lista.setAttribute("class", "carrinho-compras-lista");
-
   lista.innerHTML = `
-     
           <img src=${imagem} alt=${descricao} class="carrinho-compras-produto">
-    
       <div class="carrinho-compras-item">
          <p class="carrinho-compras-descricao" data-carrinho-produto>${descricao}</p>
          <p data-carrinho-quantidade=${quantidade} class="carrinho-compras-quantidade">Qtd.: ${quantidade} und.</p>
@@ -288,7 +271,6 @@ const filtrarProduto = (evento) => {
 function produtoNaoEncontrado() {
   const div = document.createElement("div");
   const lista = document.querySelector("[data-lista-produtos]");
-
   div.innerHTML = `<p>Produto(s) não encontrado!</p>`;
   lista.appendChild(div);
 }
@@ -345,9 +327,9 @@ const FiltroDepartamentos = () => {
 };
 
 const InputFiltrarProduto = () => {
-  const form = document.querySelector('[data-form]');
-  const inputBuscarProduto = document.createElement('div');
-  inputBuscarProduto.setAttribute('data-form-pesquisa', '');
+  const form = document.querySelector("[data-form]");
+  const inputBuscarProduto = document.createElement("div");
+  inputBuscarProduto.setAttribute("data-form-pesquisa", "");
   inputBuscarProduto.innerHTML = `<input type="search" id="busca" name="busca" data-filtrar-produto
  placeholder="Pesquise por produto..."><svg alt="lupa"></svg>`;
   inputBuscarProduto.addEventListener("input", filtrarProduto);
@@ -356,8 +338,74 @@ const InputFiltrarProduto = () => {
   return inputBuscarProduto;
 };
 
+const AreaCarrinho = () => {
+  const areaCarrinho = document.querySelector("[data-secao-carrinho]");
+  const divCarrinho = document.createElement("div");
+  divCarrinho.classList.add("carrinho-lista");
+
+  const h3 = document.createElement("h3");
+  h3.textContent = "Carrinho";
+  divCarrinho.appendChild(h3);
+
+  const ul = document.createElement("ul");
+  ul.setAttribute("data-carrinho-lista", "");
+  divCarrinho.appendChild(ul);
+
+  const divFinalizar = document.createElement("div");
+  divFinalizar.classList.add("compras-carrinho-finalizar");
+  divFinalizar.setAttribute("data-compras-carrinho", "");
+  divCarrinho.appendChild(divFinalizar);
+
+  const pVazio = document.createElement("p");
+  pVazio.classList.add("compras-carrinho-vazio");
+  pVazio.setAttribute("data-carrinho-vazio", "");
+  pVazio.textContent = "Carrinho Vazio!";
+  divFinalizar.appendChild(pVazio);
+
+  const divValorTotal = document.createElement("div");
+  divValorTotal.classList.add("compras-carrinho-total");
+
+  const pTotal = document.createElement("p");
+  pTotal.textContent = "Valor Total:";
+  divValorTotal.appendChild(pTotal);
+
+  const pDataTotal = document.createElement("p");
+  pDataTotal.setAttribute("data-carrinho-total", "");
+  pDataTotal.textContent = "R$ 0.00";
+  divValorTotal.appendChild(pDataTotal);
+  divFinalizar.appendChild(divValorTotal);
+
+  const divQuantidade = document.createElement("div");
+  divQuantidade.setAttribute("class", "compras-carrinho-total");
+
+  const pQuantidade = document.createElement("p");
+  pQuantidade.textContent = "Quantidade Total:";
+  divQuantidade.appendChild(pQuantidade);
+
+  const pDataQuantidade = document.createElement("p");
+  pDataQuantidade.setAttribute("data-carrinho-quantidade", "");
+  pDataQuantidade.textContent = "0 und."
+  divQuantidade.appendChild(pDataQuantidade);
+  divFinalizar.appendChild(divQuantidade);
+
+  const botaoFinalizarComprar = document.createElement("button");
+  botaoFinalizarComprar.setAttribute("class", "card button");
+  botaoFinalizarComprar.setAttribute("data-finalizar-compra", "");
+  botaoFinalizarComprar.addEventListener("click", fecharPedido);
+  botaoFinalizarComprar.textContent = "Finalizar";
+  botaoFinalizarComprar.addEventListener("click", fecharPedido);
+  divFinalizar.appendChild(botaoFinalizarComprar);
+
+  areaCarrinho.appendChild(divCarrinho);
+
+  return areaCarrinho;
+};
+
 InputFiltrarProduto();
-carregarProdutos();
 FiltroDepartamentos();
-const finalizarCompra = document.querySelector("[data-finalizar-compra]");
-finalizarCompra.addEventListener("click", fecharPedido);
+carregarProdutos();
+AreaCarrinho();
+let carrinhoValorTotal = document.querySelector("[data-carrinho-total]");
+let carrinhoQuantidadeTotal = document.querySelector(
+  "[data-carrinho-quantidade]"
+);
