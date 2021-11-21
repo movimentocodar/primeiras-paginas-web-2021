@@ -59,6 +59,7 @@ let carrinhoQuantidadeTotal = document.querySelector(
 let carrinhoQuantidadeitens = document.querySelector(
   "[data-carrinho-quantidade-itens]"
 );
+let navegacao = document.querySelector("[data-navegacao]");
 
 const criarProduto = (imagem, descricao, preco, indice) => {
   const listaProdutos = document.querySelector("[data-lista-produtos]");
@@ -149,7 +150,7 @@ function calcularListaDeCompra(produto, indice) {
     produto.preco,
     indice
   );
-  
+
   valorTotal += parseFloat(produto.preco);
   quantidadeTotal += parseInt(produto.quantidade);
 }
@@ -177,53 +178,92 @@ carregarCarrinho = (codigo, imagem, descricao, quantidade, preco, indice) => {
   carrinho.appendChild(lista);
 };
 
-
 const limparCarrinho = () => {
-    const carrinho = document.querySelector("[data-carrinho-lista]");
-    const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
-    carrinhoVazio.textContent = "Carrinho Vazio!";
-    while (carrinho.firstChild) {
-      carrinho.removeChild(carrinho.lastChild);
-    }
-    valorTotal = 0;
-    quantidadeTotal = 0;
-  
-  };
+  const carrinho = document.querySelector("[data-carrinho-lista]");
+  const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
+  carrinhoVazio.textContent = "Carrinho Vazio!";
+  while (carrinho.firstChild) {
+    carrinho.removeChild(carrinho.lastChild);
+  }
+  valorTotal = 0;
+  quantidadeTotal = 0;
+};
 
-  const excluirItem = (evento) => {
-    const produto = evento.target;
-  
-    if (produto.type === "button") {
-      const botaoExcluir = evento.target;
-      const lista = botaoExcluir.parentElement;
-      console.log(lista);
-      const produtoQuantidade = lista.querySelector("[data-carrinho-quantidade]");
-      const quantidade = produtoQuantidade.getAttribute(
-        "data-carrinho-quantidade"
-      );
-      const produtoPreco = lista.querySelector("[data-carrinho-valor]");
-      const preco = produtoPreco.getAttribute("data-carrinho-valor");
-      const itemList = lista.querySelector("[data-carrinho-excluir]");
-      const item = itemList.getAttribute("[data-carrinho-excluir]");
-      valorTotal -= preco;
-      quantidadeTotal -= parseInt(quantidade);
-  
-      lista.remove();
-      listaDeCompras.splice(item, 1);
-  
-      carrinhoValorTotal.textContent = `R$ ${valorTotal.toFixed(2)}`;
-      carrinhoQuantidadeTotal.textContent = `${quantidadeTotal}`;
-      carrinhoQuantidadeitens.textContent = `${quantidadeTotal}`;
-      if (listaDeCompras.length === 0) {
-        const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
-        carrinhoVazio.textContent = "Carrinho Vazio!";
-      }
+const excluirItem = (evento) => {
+  const produto = evento.target;
+
+  if (produto.type === "button") {
+    const botaoExcluir = evento.target;
+    const lista = botaoExcluir.parentElement;
+    console.log(lista);
+    const produtoQuantidade = lista.querySelector("[data-carrinho-quantidade]");
+    const quantidade = produtoQuantidade.getAttribute(
+      "data-carrinho-quantidade"
+    );
+    const produtoPreco = lista.querySelector("[data-carrinho-valor]");
+    const preco = produtoPreco.getAttribute("data-carrinho-valor");
+    const itemList = lista.querySelector("[data-carrinho-excluir]");
+    const item = itemList.getAttribute("[data-carrinho-excluir]");
+    valorTotal -= preco;
+    quantidadeTotal -= parseInt(quantidade);
+
+    lista.remove();
+    listaDeCompras.splice(item, 1);
+
+    carrinhoValorTotal.textContent = `R$ ${valorTotal.toFixed(2)}`;
+    carrinhoQuantidadeTotal.textContent = `${quantidadeTotal}`;
+    carrinhoQuantidadeitens.textContent = `${quantidadeTotal}`;
+    if (listaDeCompras.length === 0) {
+      const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
+      carrinhoVazio.textContent = "Carrinho Vazio!";
     }
-  };
+  }
+};
+
+const filtrarDepartamento = (evento) => {
+  const elemento = evento.target;
+  const elementoPai = elemento.parentElement;
+  const elementoFilho = elementoPai.querySelector("[data-departamento]");
+  const departamento = elementoFilho.getAttribute("data-departamento");
+  listaPorDeparmento(departamento);
+};
+
+function listaPorDeparmento(departamento) {
+  let item = [];
+  navegacao.textContent = departamento;
+  limparProdutos();
+
+  if (departamento === "todos") {
+    carregarProdutos();
+    return;
+  }
+
+  for (let p of banco) {
+    if (p.departamento.indexOf(departamento) > -1) {
+      item.push(p);
+    }
+  }
+
+  if (item.length === 0) {
+    produtoNaoEncontrado();
+  } else {
+    item.forEach((itens, indice) =>
+      criarProduto(itens.imagem, itens.descricao, itens.preco, indice)
+    );
+  }
+}
+
+const limparProdutos = () => {
+  const listaProdutos = document.querySelector("[data-lista-produtos]");
+  while (listaProdutos.firstChild) {
+    listaProdutos.removeChild(listaProdutos.firstChild);
+  }
+};
 
 carregarProdutos();
 const comprarProduto = document.querySelector("[data-lista-produtos]");
 comprarProduto.addEventListener("click", adicionarProduto);
 const deletarProduto = document.querySelector("[data-carrinho-lista]");
 deletarProduto.addEventListener("click", excluirItem);
-
+const departamento = document.querySelector("[data-departamento]");
+departamento.addEventListener("click", filtrarDepartamento);
