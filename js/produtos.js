@@ -307,8 +307,6 @@ const BotaoComprar = (indice) => {
   return botaoComprar;
 };
 
-carregarProdutos();
-
 const BotaoExcluir = (codigo, indice) => {
   const botaoExcluir = document.createElement('button');
   botaoExcluir.classList.add('carrinho-compras-excluir');
@@ -318,8 +316,36 @@ const BotaoExcluir = (codigo, indice) => {
   return botaoExcluir;
 };
 
-const departamento = document.querySelector("[data-departamento]");
-departamento.addEventListener("click", filtrarDepartamento);
+const FiltroDepartamentos = () => {
+ const filtroDepartamentos = document.createElement('div');
+ const menuDepartamento = document.querySelector('[data-menu-departamento]');
+
+filtroDepartamentos.innerHTML = `
+<ul class="menu__list r-list" data-departamento>
+<li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
+        data-departamento="todos">Todos os
+        departamentos</a></li>
+<li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
+        data-departamento="hortifruti">Hortifruti</a></li>
+<li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
+        data-departamento="bebidas">Bebidas</a>
+</li>
+<li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
+        data-departamento="mercearia">Mercearia</a></li>
+<li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
+        data-departamento="padaria">Padaria</a></li>
+<li class="menu__group"><a href="#0" class="menu__link r-link text-underlined"
+        data-departamento="congelados">Congelados</a></li>
+</ul>`
+menuDepartamento.appendChild(filtroDepartamentos);
+filtroDepartamentos.addEventListener('click', filtrarDepartamento);
+return filtroDepartamentos;
+
+}
+
+
+carregarProdutos();
+FiltroDepartamentos();
 const buscarProduto = document.querySelector("[data-filtrar-produto]");
 buscarProduto.addEventListener("input", filtrarProduto);
 const finalizarCompra = document.querySelector("[data-finalizar-compra]");
