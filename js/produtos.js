@@ -244,19 +244,32 @@ function listaPorDeparmento(departamento) {
     }
   }
 
-  if (item.length === 0) {
-    produtoNaoEncontrado();
-  } else {
     item.forEach((itens, indice) =>
       criarProduto(itens.imagem, itens.descricao, itens.preco, indice)
     );
-  }
 }
 
 const limparProdutos = () => {
   const listaProdutos = document.querySelector("[data-lista-produtos]");
   while (listaProdutos.firstChild) {
     listaProdutos.removeChild(listaProdutos.firstChild);
+  }
+};
+
+const filtrarProduto = (evento) => {
+  const texto = evento.target.value;
+  let item = [];
+
+  for (let p of banco) {
+    if (p.descricao.toLowerCase().indexOf(texto.toLowerCase()) > -1) {
+      item.push(p);
+    }
+
+    limparProdutos();
+
+      item.forEach((itens, indice) =>
+        criarProduto(itens.imagem, itens.descricao, itens.preco, indice)
+      );
   }
 };
 
@@ -267,3 +280,5 @@ const deletarProduto = document.querySelector("[data-carrinho-lista]");
 deletarProduto.addEventListener("click", excluirItem);
 const departamento = document.querySelector("[data-departamento]");
 departamento.addEventListener("click", filtrarDepartamento);
+const buscarProduto = document.querySelector("[data-filtrar-produto]");
+buscarProduto.addEventListener("input", filtrarProduto);
