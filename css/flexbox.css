@@ -1,0 +1,21 @@
+.atendimento {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cabecalhoPrincipal {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .cabecalhoPrincipal-nav {
+    display: flex;
+    align-items: center;
+  }
+  .cabecalhoPrincipal .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  

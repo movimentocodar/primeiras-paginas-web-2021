@@ -1,0 +1,119 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #156f96;
+  }
+  header {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 5px 10px 0px #6b6b6b;
+  }
+  
+  .atendimento li {
+    margin-left: 10px;
+  }
+  
+  .atendimento li a:visited {
+    color: #156f96;
+  }
+  
+  .atendimento li svg {
+    width: 18px;
+    height: 18px;
+    margin-top: -2px;
+    background: url(../imagens/svg/sacola.svg) 0 0 no-repeat;
+  }
+  
+  h1 img {
+    width: 200px;
+  }
+  
+  header div form {
+    width: 40%;
+  }
+  
+  header div form input {
+    border-radius: 20px;
+    border: 1px solid #156f96;
+    box-shadow: 0 4px 88px -7px #156f96;
+    padding: 5px 20px;
+  }
+  
+  header div form svg {
+    width: 28px;
+    position: absolute;
+    left: 90%;
+    top: 5px;
+    transform: scaleX(-1);
+    background: url(../imagens/svg/lupa.svg) 0 0 no-repeat;
+  }
+  
+  header div form button {
+    background: #156f96;
+    color: white;
+    width: 55px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid #156f96;
+  }
+  
+  header div form div {
+    width: 100%;
+    position: relative;
+  }
+  
+  header div form div input {
+    width: 100%;
+  }
+  
+  header div form div input,
+  button {
+    padding: 10px;
+  }
+  
+  header div form div input:active,
+  input:focus {
+    outline-color: #81abd8;
+    background: cornsilk;
+  }
+  
+  header div form div button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  header div form div button:hover {
+    cursor: pointer;
+  }
+  
+  nav svg {
+    width: 32px;
+    height: 32px;
+    background: url(../imagens/svg/user.svg) 0 0 no-repeat;
+  }
+  
+  nav a {
+    padding: 0px 20px;
+  }
+  
+  header div nav div svg {
+    width: 32px;
+    height: 32px;
+    background: url(../imagens/svg/carrinho.svg) 0 0 no-repeat;
+  }
+  
+  nav div span {
+    position: absolute;
+    background: #156f96;
+    border-radius: 58%;
+    height: 21px;
+    width: 21px;
+    line-height: 22px;
+    display: inline-block;
+    text-align: center;
+    margin: -8px -13px;
+    font-weight: bolder;
+    color: white;
+    font-size: small;
+  }
+  
