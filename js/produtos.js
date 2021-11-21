@@ -131,6 +131,7 @@ const adicionarProduto = (evento) => {
 };
 
 const carregarProdutosNoCarrinho = () => {
+  limparCarrinho();
   const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
   carrinhoVazio.textContent = "";
   listaDeCompras.forEach(calcularListaDeCompra);
@@ -175,6 +176,19 @@ carregarCarrinho = (codigo, imagem, descricao, quantidade, preco, indice) => {
 
   carrinho.appendChild(lista);
 };
+
+
+const limparCarrinho = () => {
+    const carrinho = document.querySelector("[data-carrinho-lista]");
+    const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
+    carrinhoVazio.textContent = "Carrinho Vazio!";
+    while (carrinho.firstChild) {
+      carrinho.removeChild(carrinho.lastChild);
+    }
+    valorTotal = 0;
+    quantidadeTotal = 0;
+  
+  };
 
 carregarProdutos();
 const comprarProduto = document.querySelector("[data-lista-produtos]");
