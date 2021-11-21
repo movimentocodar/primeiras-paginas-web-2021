@@ -137,7 +137,7 @@ const carregarProdutosNoCarrinho = () => {
   carrinhoVazio.textContent = "";
   listaDeCompras.forEach(calcularListaDeCompra);
   carrinhoValorTotal.textContent = `R$ ${valorTotal.toFixed(2)}`;
-  carrinhoQuantidadeTotal.textContent = `${quantidadeTotal}`;
+  carrinhoQuantidadeTotal.textContent = `${quantidadeTotal} und.`;
   carrinhoQuantidadeitens.textContent = `${quantidadeTotal}`;
 };
 
@@ -273,6 +273,15 @@ const filtrarProduto = (evento) => {
   }
 };
 
+const fecharPedido = (evento) =>{
+  
+    listaDeCompras.splice(0, listaDeCompras.length);
+    limparCarrinho();
+    carrinhoValorTotal.textContent = "R$ 0.00";
+    carrinhoQuantidadeTotal.textContent = "0 und." ;
+    carrinhoQuantidadeitens.textContent = 0 ;
+  }
+
 carregarProdutos();
 const comprarProduto = document.querySelector("[data-lista-produtos]");
 comprarProduto.addEventListener("click", adicionarProduto);
@@ -282,3 +291,5 @@ const departamento = document.querySelector("[data-departamento]");
 departamento.addEventListener("click", filtrarDepartamento);
 const buscarProduto = document.querySelector("[data-filtrar-produto]");
 buscarProduto.addEventListener("input", filtrarProduto);
+const finalizarCompra = document.querySelector('[data-finalizar-compra]')
+finalizarCompra.addEventListener('click', fecharPedido);
