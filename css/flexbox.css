@@ -13,11 +13,19 @@
   display: flex;
   align-items: center;
 }
+
 .cabecalhoPrincipal .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+.conteudoPrincipal .container {
+    display: flex;
+    align-items: top;
+    margin-top: 1%;
+    justify-content: space-around;
+  }
 
 .listaProdutos {
   display: flex;
