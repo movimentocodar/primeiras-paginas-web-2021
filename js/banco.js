@@ -1,4 +1,5 @@
-let banco = [
+import CriarCard from "../componentes/criarCard.js";
+let hugoogle = [
   {
     imagem: "./imagens/produtos/arroz.jpg",
     descricao: "Arroz",
@@ -49,4 +50,13 @@ let banco = [
   },
 ];
 
-export default banco;
+const carregarProdutos = () => {
+  hugoogle.forEach((produto, indice) =>
+    CriarCard(produto.imagem, produto.descricao, produto.preco, indice)
+  );
+};
+
+export default {
+  hugoogle,
+  carregarProdutos,
+};
