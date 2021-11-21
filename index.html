@@ -86,25 +86,61 @@
 
 
                 <div class="listaProdutos" data-lista-produtos>
-                 
+
                     <div class="card">
 
-                     <div class="card-body">
-                          <img src="./imagens/produtos/arroz.jpg"  class="card-img-top" alt="descricao" data-produto-imagem>
-                          <p data-produto-descricao>descricao</p>
-                          <p class="card-price" data-produto-preco> R$ 0.00</p>
-                          <input type="number"  min="0" max="999" class="card-quantidade" value="1" data-produto-quantidade>  
-                          <button type="button" >Comprar</button>
-                     </div>
-
-                     
-                     </div>
-
-
-
+                        <div class="card-body">
+                            <img src="./imagens/produtos/arroz.jpg" class="card-img-top" alt="descricao"
+                                data-produto-imagem>
+                            <p data-produto-descricao>descricao</p>
+                            <p class="card-price" data-produto-preco> R$ 0.00</p>
+                            <input type="number" min="0" max="999" class="card-quantidade" value="1"
+                                data-produto-quantidade>
+                            <button type="button">Comprar</button>
+                        </div>
+                    </div>
                 </div>
 
             </section>
+
+            <section class="carrinho">
+
+                <div class="carrinho-lista">
+                    <h3>CARRINHO</h3>
+                    <ul data-carrinho-lista>
+
+
+                        <li class="carrinho-compras-lista">
+                            <img src="imagens/produtos/arroz.jpg" alt="arroz" class="carrinho-compras-produto">
+
+                            <div class="carrinho-compras-item">
+                                <p class="carrinho-compras-descricao" data-carrinho-produto>descricao</p>
+                                <p data-carrinho-quantidade=${quantidade} class="carrinho-compras-quantidade">Qtd.: 0
+                                    und.</p>
+                                <p data-carrinho-valor class="carrinho-compras-valor">R$ 0.00</p>
+                            </div>
+
+                            <button type="button" class="carrinho-compras-excluir" data-produto-comprar></button>`;
+                        </li>
+
+                    </ul>
+
+                    <div class="compras-carrinho-finalizar">
+                        <p class="compras-carrinho-vazio" data-carrinho-vazio>Carrinho Vazio!</p>
+                        <div class="compras-carrinho-total">
+                            <p>Valor Total:</p>
+                            <p data-carrinho-total>R$ 0.00</p>
+                        </div>
+                        <div class="compras-carrinho-total">
+                            <p>Quantidade Total:</p>
+                            <p data-carrinho-quantidade>0 und.</p>
+                        </div>
+                        <button class="card button" data-finalizar-compra type="button">Finalizar</button>
+                    </div>
+
+                </div>
+            </section>
+
 
         </div>
 

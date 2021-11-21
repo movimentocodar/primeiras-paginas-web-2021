@@ -1,33 +1,48 @@
 .atendimento {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .cabecalhoPrincipal {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .cabecalhoPrincipal-nav {
-    display: flex;
-    align-items: center;
-  }
-  .cabecalhoPrincipal .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  
+  display: flex;
+  justify-content: center;
+}
+
+.cabecalhoPrincipal {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cabecalhoPrincipal-nav {
+  display: flex;
+  align-items: center;
+}
+.cabecalhoPrincipal .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .listaProdutos {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: left;
-    margin: 12px;
-  }
-  
-  .navegacao {
-    display: flex;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: left;
+  margin: 12px;
+}
+
+.navegacao {
+  display: flex;
+}
+
+.carrinho-compras-lista {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.carrinho-compras-lista div:nth-of-type(1) {
+  flex-grow: 2;
+}
+
+.compras-carrinho-total {
+  display: flex;
+  align-items: left;
+  justify-content: start;
+}
