@@ -264,7 +264,7 @@ h2 {
   outline: none;
   padding: 15px;
   background-repeat: no-repeat;
-  background: url("../imagens/excluir.svg") 0 0 no-repeat;
+  background: url("../imagens/svg/excluir.svg") 0 0 no-repeat;
   cursor: pointer;
 }
 
