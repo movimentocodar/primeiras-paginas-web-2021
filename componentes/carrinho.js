@@ -101,23 +101,8 @@ const carregarCarrinho = (
 };
 
 const carregarProdutosNoCarrinho = (listaDeCompras) => {
-  //   let carrinhoValorTotal = document.querySelector("[data-carrinho-total]");
-  //   let carrinhoQuantidadeTotal = document.querySelector(
-  //     "[data-carrinho-quantidade-total]"
-  //   );
-  //   let carrinhoQuantidadeitens = document.querySelector(
-  //     "[data-carrinho-quantidade-itens]"
-  //   );
-
-  //   const carrinhoVazio = document.querySelector("[data-carrinho-vazio]");
-  //   carrinhoVazio.textContent = "";
-
   limparCarrinho();
   listaDeCompras.forEach(listaDeProdutos);
-
-  //   carrinhoValorTotal.textContent = `R$ ${valorTotal.toFixed(2)}`;
-  //   carrinhoQuantidadeTotal.textContent = `${quantidadeTotal}`;
-  //   carrinhoQuantidadeitens.textContent = `${quantidadeTotal}`;
 };
 
 function listaDeProdutos(produto, indice) {
