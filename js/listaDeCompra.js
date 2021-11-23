@@ -1,4 +1,5 @@
 import carrinho from "../componentes/carrinho.js";
+import mensagem from "../componentes/mensagem.js";
 let listaDeCompras = [];
 
 const adicionarProdutoNaLista = (
@@ -35,8 +36,7 @@ const adicionarProdutoNaLista = (
 };
 
 const finalizarListaDeCompra = (evento) => {
-  listaDeCompras.splice(0, listaDeCompras.length);
-  carrinho.limparCarrinho();
+      mensagem.MensagemDeSucesso("O seu pedido foi enviado com sucesso!", listaDeCompras, carrinho); 
 };
 
 function removeProdutoDaLista(item) {

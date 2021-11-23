@@ -26,7 +26,7 @@ const filtrarProduto = (evento) => {
     limparProdutos();
 
     if (item.length === 0) {
-      Mensagem("Produto(s) não encontrado!", "[data-lista-produtos]");
+      Mensagem.MensagemPorParametro("Produto(s) não encontrado!", "[data-lista-produtos]");
     } else {
       item.forEach((itens, indice) =>
         CriarCard(itens.imagem, itens.descricao, itens.preco, indice)

@@ -27,6 +27,8 @@ const CriarCard = (imagem, descricao, preco, indice) => {
 
   const inputQuantidade = document.createElement("input");
   inputQuantidade.setAttribute("type", "number");
+  inputQuantidade.setAttribute("min", "1");
+  inputQuantidade.setAttribute("max", "9999");
   inputQuantidade.setAttribute("class", "card-quantidade");
   inputQuantidade.setAttribute("value", "1");
   inputQuantidade.setAttribute("data-card", indice);
@@ -42,7 +44,7 @@ const CriarCard = (imagem, descricao, preco, indice) => {
 
 const validaQuantidade = (e) => {
   const input = e.target;
-  if (input.value === "" || input.value < 0) {
+  if (input.value === "" || input.value <= 0) {
     input.value = 1;
   }
 };

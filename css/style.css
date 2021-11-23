@@ -2,10 +2,20 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #156f96;
 }
+
 header {
   background: #ffffff;
   padding: 20px;
   box-shadow: 0 5px 10px 0px #6b6b6b;
+}
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    position: absolute;
+    right: 2%;
+    font-size: larger;
 }
 
 .atendimento li {
