@@ -77,5 +77,4 @@ Disponibilize o seu projeto através do [GitHub Pages](https://pages.github.com/
 <a href="https://feehvecch.github.io/primeiras-paginas-web-2021/"><img width="50" height="50" src="https://github.com/feehvecch.png"></img></a>
 <a href="https://lilianjaf.github.io/primeiras-paginas-web-2021/"><img width="50" height="50" src="https://github.com/lilianjaf.png"></img></a>
 <a href="https://gabrieltrudes.github.io/primeiras-paginas-web-2021/"><img width="50" height="50" src="https://github.com/gabrieltrudes.png"></img></a>
-
-
+<a href="https://hugoogle.github.io/desafios/"><img width="50" height="50" src="https://github.com/hugoogle.png"></img></a>
