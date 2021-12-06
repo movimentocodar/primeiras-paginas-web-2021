@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico">
+    <link rel="stylesheet" href="css/flexbox.css">
+    <link rel="stylesheet" href="css/menu.css">
+
+    <title>Hugoogle</title>
 </head>
+
 <body>
-    
+
+    <header>
+        <div>
+            <div id="mensagem" class="success" data-mensagem></div>
+            <ul class="atendimento">
+
+                <li>Compre pelo tel: 0800 123 4500</li>
+                <li>
+                    <svg alt="sacola"></svg>
+                </li>
+                <li><a href="">Meus pedidos</a></li>
+            </ul>
+        </div>
+        <div class="cabecalhoPrincipal">
+
+            <h1>
+                <img src="./imagens/logo/logo.png" alt="Hugoogle Supermercados" title="Hugoogle Supermercados">
+            </h1>
+
+            <img src="./imagens/logo/familia.jpg" alt="O supermecado da familia!" title="O Supermercado da Familia!">
+
+            <form action="" data-form>
+
+            </form>
+            <nav class="cabecalhoPrincipal-nav">
+                <svg alt="user"></svg>
+                <a href="">Fulano</a>
+                <div>
+                    <svg alt="carrinho"></svg>
+                    <span data-carrinho-quantidade-itens>0</span>
+                </div>
+            </nav>
+        </div>
+
+        <nav class="page__menu menu" data-menu-departamento>
+
+        </nav>
+
+    </header>
+
+    <main class="conteudoPrincipal">
+        <div class="container">
+
+            <section class="produtos">
+                <div class=navegacao>
+                    <p>Onde você está > Departamento:</p>
+                    <p data-navegacao>Todos</p>
+                </div>
+
+                <h2>Destaque</h2>
+
+                <div class="listaProdutos" data-lista-produtos>
+
+                </div>
+            </section>
+
+            <section class="carrinho" data-secao-carrinho>
+            </section>
+
+        </div>
+
+    </main>
+    <footer>
+        <div>
+            <div class="contatos">
+                <a href="" title="facebook">
+                    <svg class="facebook"></svg>
+                </a>
+                <a href="" title="twitter">
+                    <svg class="twitter"></svg>
+                </a>
+                <a href="" title="instagram">
+                    <svg class="instagram"></svg>
+                </a>
+            </div>
+        </div>
+        <p class="copyright">&copy; Copyright hugoogle - 2021</p>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
 </body>
+
 </html>
