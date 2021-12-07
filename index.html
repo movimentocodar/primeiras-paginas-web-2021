@@ -1,11 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Estilos -->
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fontes -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Título da página -->
+
+    <title>Minha Loja</title>
+
 </head>
+
 <body>
-    
+    <header>
+
+        <!-- Menu -->
+
+        <div class="caixa">
+            <h1><img src="images/logo.png" width="60" height="60" alt="Logo do Site"></h1>
+            <a href="http://github.com/gabrieltrudes">
+                <img class="usuario" src="images/user.png" width="60" height="60" alt="Usuário">
+            </a>
+        </div>
+    </header>
+
+    <!-- Carrinho -->
+
+    <div class="container">
+        <nav>
+            <div>
+                <div class="title-destaque">Destaques</div>
+                <label for="fname">Busque por um produto:</label>
+                <div class="search-input"><input type="search" autocomplete="off" data-search
+                        placeholder="Exemplo: Arroz" id="fname" name="fname"></div>
+            </div>
+        </nav>
+        <aside>
+            <div class="carrinho" data-carrinho>
+                <div class="title-carrinho">Carrinho</div>
+                <div data-carrinho-item>
+                </div>
+                <div class="valor-quantidade">
+                    <strong>Valor total:</strong> R$ <span data-cart-item-preco>0,00</span><br>
+                    <strong>Quantidade total: </strong><span data-item-quantidade>0</span>
+                </div>
+                <button type="submit" data-finalizar-cart>Finalizar</button>
+            </div>
+        </aside>
+
+        <main>
+
+            <!-- Produtos -->
+
+            <section>
+                <div class="shopitens">
+
+                    <div class="item">
+                        <img data-img-item src="images/mems.jpg" alt="M e M">
+                        <span class="item-name">M&M</span><br>
+                        R$<span class="item-preco" data-item-preco>10,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                    <div class="item">
+                        <img data-img-item src="images/rosquinha-coco.jpg" alt="Rosquinha de Coco">
+                        <span class="item-name">Rosquinha</span><br>
+                        R$<span class="item-preco" data-item-preco>4,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                    <div class="item">
+                        <img data-img-item src="images/coca-cola.jpg" alt="Coca-Cola">
+                        <span class="item-name">Coca-Cola</span><br>
+                        R$<span class="item-preco" data-item-preco>5,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                    <div class="item">
+                        <img data-img-item src="images/frutas.jpeg" alt="Frutas">
+                        <span class="item-name">Frutas</span><br>
+                        R$<span class="item-preco" data-item-preco>8,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                    <div class="item">
+                        <img data-img-item src="images/arroz.jpg" alt="Arroz Blue Ville">
+                        <span class="item-name">Arroz Blue Ville</span><br>
+                        R$<span class="item-preco" data-item-preco>10,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                    <div class="item">
+                        <img data-img-item src="images/vinhos.jpeg" alt="Vinhos">
+                        <span class="item-name">Vinhos</span><br>
+                        R$<span class="item-preco" data-item-preco>50,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                    <div class="item">
+                        <img data-img-item src="images/cream-cracker.jpeg" alt="Cream Cracker">
+                        <span class="item-name">Cream Cracker</span><br>
+                        R$<span class="item-preco" data-item-preco>3,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                    <div class="item">
+                        <img data-img-item src="images/sadia-lasanha-frango.jpg" alt="Lasanha de Frango">
+                        <span class="item-name">Lasanha</span><br>
+                        R$<span class="item-preco" data-item-preco>15,00</span><br>
+                        <input class="item-input" type="number" value="1" min="1" max="99">
+                        <button class="button-item" data-comprar-button>Comprar</button>
+                    </div>
+
+                </div>
+            </section>
+    </div>
+    </main>
+
+    <!-- Rodapé -->
+
+    <footer>
+        <p>Desenvolvido por Gabriel Trudes Melo</p>
+    </footer>
+
 </body>
+
+<!-- Scripts -->
+
+<script src="js/main.js"></script>
+<script src="js/components/botaoComprar.js"></script>
+<script src="js/components/botaoComprar.js"></script>
+<script src="js/components/buscarProduto.js"></script>
+
 </html>
