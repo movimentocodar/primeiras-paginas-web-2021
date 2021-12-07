@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+main{
+    padding: 1em 5em;
+}
+
+.cabecalho{
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+}
+
+.cabecalho-conteudo{
+    margin: 0 auto;
+    padding: 2em;
+    position: relative;    
+    width: 940px;
+}
+
+.cabecalho--logo{
+    height: auto;
+    width: 200px;    
+}
+
+.cabecalho--menu{
+    position: absolute;
+    right: 0;
+    top: 1em;    
+}
+
+.cabecalho--menu ul li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cabecalho--menu--img-perfil{
+    width: 3em;
+}
+
+.cabecalho--menu--nome-perfil{
+    font-weight: bold;
+}
+
+.destaques-texto{
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0.5em 0;
+}
+
+.buscar-produto{
+    margin: 0 0 1em 0.5em;
+    padding: 0.5em;    
+    width: 60%;
+}
+
+.produtos-e-carrinho{
+    float: left;
+    margin-bottom: 2em;
+}
+
+.rodape{
+    background: rgb(63, 63, 63);
+    color: #fff;
+    clear: left;
+    font-size: 0.8em;
+    text-align: center;    
+    padding: 2em;
+}

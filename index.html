@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vizzela Cosméticos</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" />
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/carrinho.css">
 </head>
 <body>
-    
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo">
+            <h1><img src="imagens/logo.png" class="cabecalho--logo"></h1>
+            <nav class="cabecalho--menu">
+                <ul>
+                    <li><img src="imagens/perfil.png" class="cabecalho--menu--img-perfil"></li>
+                    <li><p class="cabecalho--menu--nome-perfil">Admin</p></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="destaques-texto">Destaques</h2>
+        <input type="text" placeholder="Buscar produto..." class="buscar-produto" data-buscar-produto>
+
+        <div class="produtos-e-carrinho">
+            <section class="produtos">
+                <ul class="lista" data-lista-produtos>
+                    
+                </ul>
+            </section>
+
+            <section class="carrinho">
+                <h3 class="carrinho--titulo">Carrinho</h3>
+                <ul class="carrinho--produtos-selecionados">
+                    <li class="nenhum-produto">Nenhum produto adicionado!</li>
+                </ul>
+                <p class="carrinho--valor-total">Valor Total: <span data-valor-total>0.00</span></p>
+                <p class="carrinho--quantidade-total">Quantidade Total: <span data-qtd-total>0</span></p>
+                <input type="submit" value="Finalizar" class="carrinho--finalizar"></input>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape--texto">2021 &copy; Todos os direitos reservados. Developed by Fernanda Beato.</p>
+    </footer>
+    <script type="module" src="js/listarProdutos.js"></script>
+    <script type="module" src="js/carrinho.js"></script>
+    <script type="module" src="js/finalizarCarrinho.js"></script>
+    <script type="module" src="js/buscarProduto.js"></script>
 </body>
 </html>

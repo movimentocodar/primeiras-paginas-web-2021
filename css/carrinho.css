@@ -1,0 +1,82 @@
+.carrinho{
+    background: #baa0d7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    float:left;
+    margin-bottom: 3em;
+    width: 35%;
+}
+
+.carrinho--titulo{
+    background: #553e6e;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.carrinho--produtos-selecionados{
+    padding: 1.5em;
+}
+
+.produto-selecionado{
+    padding: 1em 0;
+}
+
+.produto-selecionado--imagem{    
+    float: left;
+    margin-right: 0.5em;
+    width: 3em;
+}
+
+.produto-selecionado--titulo{    
+    font-weight: bold;
+}
+.produto-selecionado--quantidade{
+    padding-top: 0.2em;
+}
+
+.produto-selecionado--deletar{
+    float: right;
+    padding: 0.5em;
+    width: 1.2em;   
+}
+
+.carrinho--valor-total{
+    font-weight: bold;
+    padding: 0 1.5em;
+}
+
+.carrinho--valor-total span{
+    font-weight: normal;
+}
+
+.carrinho--quantidade-total{
+    font-weight: bold;
+    padding: 0.5em 1.5em;
+}
+
+.carrinho--quantidade-total span{
+    font-weight: normal;
+}
+
+.carrinho--finalizar{
+    background: rgb(63, 63, 63);
+    border: 2px solid rgb(63, 63, 63);
+    border-radius: 2px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 1em 0 0 0;    
+    padding: 1em; 
+    transition: 100ms;   
+    width: 100%;
+}
+
+.carrinho--finalizar:hover{
+    background: #fff;
+    color: #553e6e;
+    border: 2px solid #553e6e;
+}

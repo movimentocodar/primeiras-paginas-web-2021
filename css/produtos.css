@@ -1,0 +1,57 @@
+.produtos{
+    float: left;
+    width: 65%;    
+}
+
+.lista--produto{
+    background: #fff;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em;
+    vertical-align: middle;    
+}
+
+.lista--produto:hover{
+    border: 1px solid #baa0d7;   
+}
+
+.lista--produto--imagem{
+    width: 150px;
+}
+
+.lista--produto--nome{
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 150px;
+    padding: 0.5em 0;    
+}
+
+.lista--produto--valor{
+    padding: 0.5em 0;
+}
+
+.lista--produto--valor:before{
+    content: "R$ ";
+}
+
+.lista--produto--quantidade{    
+    display: block;
+    margin: 0.5em 0;
+    width: 25px;    
+}
+
+.lista--produto--comprar{
+    background: #baa0d7;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    padding: 0.5em 1.5em;
+    transition: 100ms;
+    width: 100%;
+}
+
+.lista--produto--comprar:hover{
+    background: #553e6e;
+    color: #fff;
+}
