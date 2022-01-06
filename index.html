@@ -3,9 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/botoes.js"></script>
+    <title>Loja Virtual</title>
 </head>
 <body>
-    
+
+    <header>
+        <div class="cabecalho">
+            <h1 class="logo">LOJA ABC</h1>
+                <a href="index.html" div class="menuLogin">
+                    <img src="imagens/icon.png" width="30px">
+                    Olá Admin | Sair
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="conteudo">
+
+        <section>
+            <h1>PRODUTOS</h1>
+            <div class="produtos">
+                <div class="item">
+                    <img data-img-item src="imagens/arroz.jpg" width="200px">
+                    <span class="nomeItem">Arroz</span><br>
+                    R$ <span class="precoItem" data-preco-item>21.90</span>
+                    <br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button id="btn1" data-btn-compra onclick="addProduto()">Comprar</button>
+                </div>
+
+                <div class="item">
+                    <img data-img-item src="imagens/coca-cola.jpg" width="200px">
+                    <span class="nomeItem">Refrigerante Coca-Cola</span>
+                    <br>
+                    R$ <span class="precoItem" data-preco-item>8.00</span><br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button class="btn2" onclick="addProduto()">Comprar</button>
+                </div>
+
+                <div class="item">
+                    <img data-img-item src="imagens/cream-cracker.jpeg" width="200px">
+                    <span class="nomeItem">Biscoito Cream Cracker</span>
+                    <br>
+                    R$ <span class="precoItem" data-preco-item>5.90</span><br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button class="btn3" onclick="addProduto()">Comprar</button>
+                </div>
+
+                <div class="item">
+                    <img data-img-item src="imagens/frutas.jpeg" width="200px">
+                    <span class="nomeItem">Frutas Variadas</span>
+                    <br>
+                    R$ <span class="precoItem" data-preco-item>5.00</span><br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button class="btn4" onclick="addProduto()">Comprar</button>
+                </div>
+
+                <div class="item">
+                    <img data-img-item src="imagens/mems.jpg" width="200px">
+                    <span class="nomeItem">Chocolates M&M</span>
+                    <br>
+                    R$ <span class="precoItem" data-preco-item>12.00</span><br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button class="btn5" onclick="addProduto()">Comprar</button>
+                </div>
+
+                <div class="item">
+                    <img data-img-item src="imagens/rosquinha-coco.jpg" width="200px">
+                    <span class="nomeItem">Biscoito Rosquinha</span>
+                    <br>
+                    R$ <span class="precoItem" data-preco-item>3.00</span><br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button class="btn6" onclick="addProduto()">Comprar</button>
+                </div>
+
+                <div class="item">
+                    <img data-img-item src="imagens/sadia-lasanha-frango.jpg" width="200px">
+                    <span class="nomeItem">Lasanha de Frango</span>
+                    <br>
+                    R$ <span class="precoItem" data-preco-item>15.90</span><br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button class="btn7" onclick="addProduto()">Comprar</button>
+                </div>
+                
+                <div class="item">
+                    <img data-img-item src="imagens/vinhos.jpeg" width="200px">
+                    <span class="nomeItem">Vinhos Variados</span>
+                    <br>
+                    R$ <span class="precoItem" data-preco-item>130.00</span><br>
+                    <input class="qtdItem" type="number" data-qtd-item value="1" min="1">
+                    <button class="btn8" onclick="addProduto()">Comprar</button>
+                </div>
+                
+            </div>
+
+        </section>
+
+            <aside>
+                <div class="carrinho">
+                    <div class="tituloCarrinho">
+                        Carrinho<br>
+                        Seu carrinho de compras está vazio.
+                    </div>
+
+                    <div data-carrinho-item>
+                    </div>
+                    <div class="valorQtd">
+                        <strong>Total de Itens: </strong><span data-cart-qtd-item>0</span><br>
+                        <strong>Total:</strong> R$ <span data-cart-preco-item>0.00</span>
+                    </div>
+                    <button type="submit" id="btnfinaliza" onclick="finalizar()" data-cart-finalizar>Finalizar</button>
+                </div>
+            </aside>
+        </div>
+
+    <footer class="rodape">LOJA ABC &copy; 2021. Todos os direitos reservados.</footer>
+
 </body>
 </html>
