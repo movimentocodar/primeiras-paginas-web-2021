@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <title>GreenMark</title>
+    </head>
+    <body>
+        <header>
+            <div class="cabecalho">
+                <div id="logo">
+                    <h1>GreenMark</h1>
+                    <img src="assets/icones/herbal-spa-treatment-leaves.png">
+                </div>
+                <div id="info-conta">
+                    <img src="assets/icones/user.png">
+                    <a href="https://github.com/movimentocodar/primeiras-paginas-web-2021">Admin</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="produtos">
+                <div class="pesquisa-produtos">
+                    <h2>Pesquisar Produto:</h2>
+                    <form action="">
+                        <input type="text" data-form-produto id="insere-produto">
+                    </form>
+                </div>
+                <h2 class="texto-acima-produtos" data-texto-produtos>Recomendações</h2>
+                <div class="exibe-produtos" data-lista-produtos>
+                    
+                </div>
+            </div>
+            <div class="carrinho">
+                <div class="carrinho-header">
+                    <img src="assets/icones/shopping-cart.png">
+                    <h2>Meu Carrinho</h2>
+                </div>
+                <ul class="lista-carrinho" data-lista-carrinho>
+                    
+                </ul>
+                <h3 id="qtda-total" data-quantidade-total>Quantidade total:</h3>
+                <h2 id="total" data-total-compra>Total: R$: 00.00</h2>
+                <button id="finalizar" data-form-finalizar>Finalizar Compra</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; Copyright GreenMark, Todos os direitos reservados.</p>
+        </footer>
+    </body>
+    <script type="module" src="main.js">
+        
+    </script>
     
-</body>
 </html>
